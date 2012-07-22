@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper", "VideoDownloadHelper\VideoDownloadHelper.csproj", "{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.Test", "VideoDownloadHelper.Test\VideoDownloadHelper.Test.csproj", "{1D2CED10-9D18-4537-861C-3B1DBF3486E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.Doudan", "VideoDownloadHelper.Doudan\VideoDownloadHelper.Doudan.csproj", "{D5F41B8F-2432-4940-8053-21A19C768341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.Builder", "VideoDownloadHelper.Builder\VideoDownloadHelper.Builder.csproj", "{00A922C1-12A4-4812-A612-0B275EED42A2}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2CED10-9D18-4537-861C-3B1DBF3486E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2CED10-9D18-4537-861C-3B1DBF3486E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2CED10-9D18-4537-861C-3B1DBF3486E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2CED10-9D18-4537-861C-3B1DBF3486E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F41B8F-2432-4940-8053-21A19C768341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F41B8F-2432-4940-8053-21A19C768341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F41B8F-2432-4940-8053-21A19C768341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F41B8F-2432-4940-8053-21A19C768341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A922C1-12A4-4812-A612-0B275EED42A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A922C1-12A4-4812-A612-0B275EED42A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A922C1-12A4-4812-A612-0B275EED42A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A922C1-12A4-4812-A612-0B275EED42A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
