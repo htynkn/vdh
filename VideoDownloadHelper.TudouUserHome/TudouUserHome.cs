@@ -12,7 +12,7 @@ using Mono.Addins;
 
 namespace VideoDownloadHelper.TudouUserHome
 {
-
+    [Extension]
     public class TudouUserHome : IPlugin
     {
 
@@ -28,20 +28,19 @@ namespace VideoDownloadHelper.TudouUserHome
 
         public bool isVaild(string url)
         {
-            String target = url;
-            if (target.StartsWith("http://www.tudou.com/home/_"))
+            if (url.StartsWith("http://www.tudou.com/home/_"))
             {
-                if (!target.EndsWith("/"))
+                if (!url.EndsWith("/"))
                 {
-                    target = target + "/";
+                    url = url + "/";
                 }
-                String number = WordHelper.CutWordByKeyword(target, "http://www.tudou.com/home/_", "/");
-                target = String.Format("http://www.tudou.com/home/item_u{0}s0p1.html", number);
+                String number = WordHelper.CutWordByKeyword(url, "http://www.tudou.com/home/_", "/");
+                url = String.Format("http://www.tudou.com/home/item_u{0}s0p1.html", number);
             }
 
-            if (target.StartsWith("http://www.tudou.com/home/item_") && target.EndsWith(".html"))
+            if (url.StartsWith("http://www.tudou.com/home/item_") && url.EndsWith(".html"))
             {
-                this.Url = target;
+                this.Url = url;
                 return true;
             }
             else

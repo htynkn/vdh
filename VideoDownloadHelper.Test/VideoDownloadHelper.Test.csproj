@@ -57,12 +57,17 @@
     <Compile Include="ITest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDoudan.cs" />
+    <Compile Include="TestTudouAlbum.cs" />
     <Compile Include="TestTudouUserHome.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoDownloadHelper.Doudan\VideoDownloadHelper.Doudan.csproj">
       <Project>{D5F41B8F-2432-4940-8053-21A19C768341}</Project>
       <Name>VideoDownloadHelper.Doudan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoDownloadHelper.TudouAlbum\VideoDownloadHelper.TudouAlbum.csproj">
+      <Project>{74868B02-9622-4D56-863F-024674ECE482}</Project>
+      <Name>VideoDownloadHelper.TudouAlbum</Name>
     </ProjectReference>
     <ProjectReference Include="..\VideoDownloadHelper.TudouUserHome\VideoDownloadHelper.TudouUserHome.csproj">
       <Project>{99B44F78-EB89-4CA3-B82F-98AACD5069D7}</Project>

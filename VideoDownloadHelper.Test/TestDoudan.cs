@@ -27,7 +27,6 @@ namespace VideoDownloadHelper.Test
         [Test]
         public void TestisVaild()
         {
-            Assert.False(plugin.isVaild("http://www.tudou.com/playlist/id/15838950/"));
             Assert.True(plugin.isVaild("http://www.tudou.com/playlist/id/15202966/"));
             Assert.False(plugin.isVaild("http://www.tudou.com/listplay/9tJnMUC-hyE.html"));
         }

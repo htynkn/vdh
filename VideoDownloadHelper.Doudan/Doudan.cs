@@ -30,8 +30,6 @@ namespace VideoDownloadHelper.Doudan
 
         public bool isVaild(string url)
         {
-            url = WebHelper.GetUrl(url);
-
             if (url.StartsWith("http://www.tudou.com/playlist/id/"))
             {
                 this.Url = url;
