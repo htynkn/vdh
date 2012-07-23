@@ -5,17 +5,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1D2CED10-9D18-4537-861C-3B1DBF3486E4}</ProjectGuid>
+    <ProjectGuid>{99B44F78-EB89-4CA3-B82F-98AACD5069D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VideoDownloadHelper.Test</RootNamespace>
-    <AssemblyName>VideoDownloadHelper.Test</AssemblyName>
+    <RootNamespace>VideoDownloadHelper.TudouUserHome</RootNamespace>
+    <AssemblyName>VideoDownloadHelper.TudouUserHome</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,39 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.7.10213, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.2.5.7.10213\lib\nunit.framework.dll</HintPath>
+    <Reference Include="Mono.Addins, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Addins.0.6.2\lib\Mono.Addins.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.mocks">
-      <HintPath>..\packages\NUnit.2.5.7.10213\lib\nunit.mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="pnunit.framework">
-      <HintPath>..\packages\NUnit.2.5.7.10213\lib\pnunit.framework.dll</HintPath>
+    <Reference Include="NSoup">
+      <HintPath>..\packages\Nsoup\NSoup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITest.cs" />
+    <Compile Include="TudouUserHome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestDoudan.cs" />
-    <Compile Include="TestTudouUserHome.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VideoDownloadHelper.Doudan\VideoDownloadHelper.Doudan.csproj">
-      <Project>{D5F41B8F-2432-4940-8053-21A19C768341}</Project>
-      <Name>VideoDownloadHelper.Doudan</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoDownloadHelper.TudouUserHome\VideoDownloadHelper.TudouUserHome.csproj">
-      <Project>{99B44F78-EB89-4CA3-B82F-98AACD5069D7}</Project>
-      <Name>VideoDownloadHelper.TudouUserHome</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VideoDownloadHelper\VideoDownloadHelper.csproj">
       <Project>{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}</Project>
       <Name>VideoDownloadHelper</Name>

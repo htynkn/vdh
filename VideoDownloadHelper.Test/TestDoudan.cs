@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using VideoDownloadHelper.Toudan;
+using VideoDownloadHelper.Doudan;
 
 namespace VideoDownloadHelper.Test
 {
     [TestFixture]
     public class TestDoudan : ITest
     {
-        IPlugin plugin = new Doudan();
+        IPlugin plugin = new VideoDownloadHelper.Doudan.Doudan();
 
         [Test]
         public void TestGetVersionNumber()

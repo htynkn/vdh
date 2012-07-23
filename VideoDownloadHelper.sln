@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.Doudan"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.Builder", "VideoDownloadHelper.Builder\VideoDownloadHelper.Builder.csproj", "{00A922C1-12A4-4812-A612-0B275EED42A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.TudouUserHome", "VideoDownloadHelper.TudouUserHome\VideoDownloadHelper.TudouUserHome.csproj", "{99B44F78-EB89-4CA3-B82F-98AACD5069D7}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -35,6 +37,10 @@ Global
 		{00A922C1-12A4-4812-A612-0B275EED42A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00A922C1-12A4-4812-A612-0B275EED42A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00A922C1-12A4-4812-A612-0B275EED42A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B44F78-EB89-4CA3-B82F-98AACD5069D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B44F78-EB89-4CA3-B82F-98AACD5069D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B44F78-EB89-4CA3-B82F-98AACD5069D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B44F78-EB89-4CA3-B82F-98AACD5069D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

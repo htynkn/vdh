@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using VideoDownloadHelper.Toudan;
 using System.IO;
 
 namespace VideoDownloadHelper.Builder
@@ -31,7 +30,7 @@ namespace VideoDownloadHelper.Builder
 
             Console.WriteLine("目标位置 : {0}", location);
 
-            Type[] types = new Type[] { typeof(Doudan) };
+            Type[] types = new Type[] { typeof(VideoDownloadHelper.Doudan.Doudan),typeof(VideoDownloadHelper.TudouUserHome.TudouUserHome)};
             foreach (Type type in types)
             {
                 String targetPath = location + type.FullName + ".dll";

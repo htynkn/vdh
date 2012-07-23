@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Mono.Addins;
-using NSoup.Select;
 using NSoup.Nodes;
 using NSoup;
-using System.Net;
-
+using NSoup.Select;
+using Mono.Addins;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.3")]
 
-namespace VideoDownloadHelper.Doudan
+namespace VideoDownloadHelper.TudouUserHome
 {
 
-    [Extension]
-    public class Doudan : IPlugin
+    public class TudouUserHome : IPlugin
     {
+
         public int GetVersionNumber()
         {
             return 1;
@@ -30,11 +28,20 @@ namespace VideoDownloadHelper.Doudan
 
         public bool isVaild(string url)
         {
-            url = WebHelper.GetUrl(url);
-
-            if (url.StartsWith("http://www.tudou.com/playlist/id/"))
+            String target = url;
+            if (target.StartsWith("http://www.tudou.com/home/_"))
             {
-                this.Url = url;
+                if (!target.EndsWith("/"))
+                {
+                    target = target + "/";
+                }
+                String number = WordHelper.CutWordByKeyword(target, "http://www.tudou.com/home/_", "/");
+                target = String.Format("http://www.tudou.com/home/item_u{0}s0p1.html", number);
+            }
+
+            if (target.StartsWith("http://www.tudou.com/home/item_") && target.EndsWith(".html"))
+            {
+                this.Url = target;
                 return true;
             }
             else
@@ -49,19 +56,16 @@ namespace VideoDownloadHelper.Doudan
 
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Url, "gbk");
             Document doc = NSoupClient.Parse(temp);
-            Elements items = doc.Select("div[class=pack pack_video_card]");
+            Elements items = doc.Select("div[class=showcase]").First.Select("div[class=item]");
             foreach (Element item in items)
             {
-                Element e1 = item.Select("h1[class=caption] a").First;
-                Element e2 = item.Select("ul[class=info]").First;
-                String title = e1.Attr("title");
-                String url = e1.Attr("href");
-                String time = e2.Select("li").First.OwnText().Substring("时长:".Length);
-                String upOwner = e2.Select("li a").First.Attr("title");
-                String key = url.Substring(url.LastIndexOf("/") + 1);
-                key = key.Remove(key.IndexOf("."));
+                Element item1 = item.Select("h1[class=caption] a").First;
+                String title = item1.Attr("title");
+                String url = item1.Attr("href");
+                Element item2 = item.Select("ul[class=info] li").First;
+                String time = item2.OwnText();
 
-                BaseItem b = new BaseItem() { Url = "http://www.tudou.com/programs/view/" + key + "/", Name = title, Time = time, Owner = upOwner };
+                BaseItem b = new BaseItem() { Name = title, Url = url, Time = time, Owner = "未知" };
 
                 this.Items.Add(b);
             }
@@ -75,7 +79,7 @@ namespace VideoDownloadHelper.Doudan
             Document doc = NSoupClient.Parse(temp);
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
-            String iid=WordHelper.CutWordByKeyword(target, "iid =", ",").Trim();
+            String iid = WordHelper.CutWordByKeyword(target, "iid =", ",").Trim();
             System.Diagnostics.Process.Start("tudou://" + iid);
         }
 
@@ -92,7 +96,6 @@ namespace VideoDownloadHelper.Doudan
         }
 
         private List<BaseItem> items;
-
 
         public string Url
         {

@@ -31,12 +31,9 @@ namespace VideoDownloadHelper
         {
             WebClient wc = new WebClient();
             wc.Credentials = CredentialCache.DefaultCredentials;
-            //wc.Headers.Add("Host", "www.tudou.com");
             wc.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             wc.Headers.Add("Accept-Language", "zh-cn,zh;q=0.5");
             wc.Headers.Add("Accept-Charset", "GB2312,utf-8;q=0.7,*;q=0.7");
-            //wc.Headers.Add("Cookie","SOKUSESSID=1324732658357i20; browse_SE_UID=1325388378334727; SOKUSESSID=1324732658357i20; JSESSIONID=abctCUFijU2fyanyLn5tt");
-            //wc.Headers.Add("Referer", "http://www.tudou.com");
             wc.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)");
             byte[] dataBuffer = wc.DownloadData(url);
             string strWebData = Encoding.GetEncoding(encoding).GetString(dataBuffer);
@@ -71,10 +68,6 @@ namespace VideoDownloadHelper
             wc.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
             wc.Headers.Add("Cache-Control", "max-age=0");
             String temp = "";
-            if (url.Contains("tudou"))
-            {
-                wc.Headers.Add("Referer", "http://so.tudou.com");
-            }
             try
             {
                 using (MemoryStream ms = new MemoryStream(wc.DownloadData(url)))
@@ -118,6 +111,14 @@ namespace VideoDownloadHelper
                     return false;
                 }
             }
+        }
+
+        public static String GetUrl(String url)
+        {
+            HttpWebRequest webRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            webRequest.AllowAutoRedirect = false;
+            HttpWebResponse httpWebResponse = (HttpWebResponse)webRequest.GetResponse();
+            return httpWebResponse.Headers.Get("Location") == null ? url : httpWebResponse.Headers.Get("Location");
         }
     }
 }

@@ -57,6 +57,10 @@
       <Project>{D5F41B8F-2432-4940-8053-21A19C768341}</Project>
       <Name>VideoDownloadHelper.Doudan</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VideoDownloadHelper.TudouUserHome\VideoDownloadHelper.TudouUserHome.csproj">
+      <Project>{99B44F78-EB89-4CA3-B82F-98AACD5069D7}</Project>
+      <Name>VideoDownloadHelper.TudouUserHome</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VideoDownloadHelper\VideoDownloadHelper.csproj">
       <Project>{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}</Project>
       <Name>VideoDownloadHelper</Name>

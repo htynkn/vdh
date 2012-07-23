@@ -35,6 +35,14 @@ namespace VideoDownloadHelper
 
         private void GetVideoList_Click(object sender, EventArgs e)
         {
+            String input = TargetUrl.Text.Trim();
+
+            if (String.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("请输入网址", "出错了", MessageBoxButtons.OK);
+                return;
+            }
+            
             bool isVaild = false;
             bool hasPlugin = false;
 
@@ -43,16 +51,16 @@ namespace VideoDownloadHelper
             AddinManager.Initialize(path,path);
             AddinManager.Registry.Update();
 
+
             foreach (IPlugin plugin in AddinManager.GetExtensionObjects<IPlugin>())
             {
                 hasPlugin = true;
-                if (plugin.isVaild(TargetUrl.Text.Trim()))
+                if (plugin.isVaild(input))
                 {
                     isVaild = true;
                     if (targetPlugin == null)
                     {
                         targetPlugin = plugin;
-                        targetPlugin.Url = TargetUrl.Text.Trim();
                     }
                     else if (targetPlugin.GetVersionNumber() < plugin.GetVersionNumber())
                     {
