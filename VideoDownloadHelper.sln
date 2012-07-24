@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.TudouUs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.TudouAlbum", "VideoDownloadHelper.TudouAlbum\VideoDownloadHelper.TudouAlbum.csproj", "{74868B02-9622-4D56-863F-024674ECE482}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.YoukuAlbum", "VideoDownloadHelper.YoukuAlbum\VideoDownloadHelper.YoukuAlbum.csproj", "{7A99B578-EE73-4CC8-8300-E455B6308902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.YoukuUserHome", "VideoDownloadHelper.YoukuUserHome\VideoDownloadHelper.YoukuUserHome.csproj", "{DE311F90-6650-4A5B-86EE-21241B6696E3}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -47,6 +51,14 @@ Global
 		{74868B02-9622-4D56-863F-024674ECE482}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74868B02-9622-4D56-863F-024674ECE482}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74868B02-9622-4D56-863F-024674ECE482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A99B578-EE73-4CC8-8300-E455B6308902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A99B578-EE73-4CC8-8300-E455B6308902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A99B578-EE73-4CC8-8300-E455B6308902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A99B578-EE73-4CC8-8300-E455B6308902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE311F90-6650-4A5B-86EE-21241B6696E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE311F90-6650-4A5B-86EE-21241B6696E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE311F90-6650-4A5B-86EE-21241B6696E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE311F90-6650-4A5B-86EE-21241B6696E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

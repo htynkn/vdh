@@ -30,7 +30,7 @@ namespace VideoDownloadHelper.Builder
 
             Console.WriteLine("目标位置 : {0}", location);
 
-            Type[] types = new Type[] { typeof(VideoDownloadHelper.Doudan.Doudan),typeof(VideoDownloadHelper.TudouUserHome.TudouUserHome),typeof(VideoDownloadHelper.TudouAlbum.TudouAlbum)};
+            Type[] types = new Type[] { typeof(VideoDownloadHelper.Doudan.Doudan),typeof(VideoDownloadHelper.TudouUserHome.TudouUserHome),typeof(VideoDownloadHelper.TudouAlbum.TudouAlbum),typeof(VideoDownloadHelper.YoukuAlbum.YoukuAlbum),typeof(VideoDownloadHelper.YoukuUserHome.YoukuUserHome)};
             foreach (Type type in types)
             {
                 String targetPath = location + type.FullName + ".dll";

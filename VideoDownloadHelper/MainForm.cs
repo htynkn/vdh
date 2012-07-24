@@ -21,6 +21,12 @@ namespace VideoDownloadHelper
         public MainForm()
         {
             InitializeComponent();
+
+
+            String path = Application.StartupPath + "\\plugsins";
+
+            AddinManager.Initialize(path, path);
+            AddinManager.Registry.Update();
         }
 
         private void ChangeState(Boolean boolean)
@@ -42,18 +48,14 @@ namespace VideoDownloadHelper
                 MessageBox.Show("请输入网址", "出错了", MessageBoxButtons.OK);
                 return;
             }
-            
+
             bool isVaild = false;
             bool hasPlugin = false;
 
-            String path = Application.StartupPath + "\\plugsins";
-
-            AddinManager.Initialize(path,path);
-            AddinManager.Registry.Update();
-
-
+            targetPlugin = null;
             foreach (IPlugin plugin in AddinManager.GetExtensionObjects<IPlugin>())
             {
+
                 hasPlugin = true;
                 if (plugin.isVaild(input))
                 {
@@ -191,7 +193,7 @@ namespace VideoDownloadHelper
                 getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + "如果反复尝试均有此错误，可以联系QQ：512395752");
             }
         }
-        
+
         bool update = true;
 
         private void getlistWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -259,7 +261,7 @@ namespace VideoDownloadHelper
                             else
                             {
                                 keyWord = "优酷";
-                                forwardUrl = "http://c.youku.com/iku";
+                                forwardUrl = "http://c.youku.com/pc-client";
                             }
                             needDown = true;
                             if (MessageBox.Show("你没有安装" + keyWord + "下载工具，点击确认安装。\n如果你确认你已经安装，请重启后再试。", "错误", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)

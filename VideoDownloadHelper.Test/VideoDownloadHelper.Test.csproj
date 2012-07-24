@@ -59,6 +59,8 @@
     <Compile Include="TestDoudan.cs" />
     <Compile Include="TestTudouAlbum.cs" />
     <Compile Include="TestTudouUserHome.cs" />
+    <Compile Include="TestYoukuAlbum.cs" />
+    <Compile Include="TestYoukuUserHome.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoDownloadHelper.Doudan\VideoDownloadHelper.Doudan.csproj">
@@ -72,6 +74,14 @@
     <ProjectReference Include="..\VideoDownloadHelper.TudouUserHome\VideoDownloadHelper.TudouUserHome.csproj">
       <Project>{99B44F78-EB89-4CA3-B82F-98AACD5069D7}</Project>
       <Name>VideoDownloadHelper.TudouUserHome</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoDownloadHelper.YoukuAlbum\VideoDownloadHelper.YoukuAlbum.csproj">
+      <Project>{7A99B578-EE73-4CC8-8300-E455B6308902}</Project>
+      <Name>VideoDownloadHelper.YoukuAlbum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoDownloadHelper.YoukuUserHome\VideoDownloadHelper.YoukuUserHome.csproj">
+      <Project>{DE311F90-6650-4A5B-86EE-21241B6696E3}</Project>
+      <Name>VideoDownloadHelper.YoukuUserHome</Name>
     </ProjectReference>
     <ProjectReference Include="..\VideoDownloadHelper\VideoDownloadHelper.csproj">
       <Project>{FFA1BE46-6DA7-4C6F-BC25-69AB3E799D01}</Project>
