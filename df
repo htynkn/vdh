@@ -1,0 +1,37 @@
+[33mcommit 965f33a9e8ea829b8ee32fc02ac6d9b5f16cd5b0[m
+Author: htynkn <htynkn@163.com>
+Date:   Tue Jul 24 04:00:09 2012 +0000
+
+    更新一下包
+
+[33mcommit 81bb13d9caa687b77c0157acc1b833df90f86f8f[m
+Author: htynkn <htynkn@163.com>
+Date:   Tue Jul 24 03:56:20 2012 +0000
+
+    1.3完成，插件5个
+
+[33mcommit 8d8023dbad81a89f2a38c9a44250f6332694db22[m
+Author: htynkn <htynkn@163.com>
+Date:   Mon Jul 23 13:56:44 2012 +0000
+
+    新增对土豆官方的支持。使用了Json.net库
+
+[33mcommit 06a40aa485591d6e0394dab39c1fec86bad12e04[m
+Author: htynkn <htynkn@163.com>
+Date:   Mon Jul 23 03:02:06 2012 +0000
+
+    必要的包
+
+[33mcommit a837777053641bd2e359eaf46e2d0ebf2b9b7231[m
+Author: htynkn <htynkn@163.com>
+Date:   Mon Jul 23 02:52:35 2012 +0000
+
+    土豆用户插件完成...话说为什么土豆老是出现502错误！
+
+[33mcommit ea1e200882c3968a5147d860e59969620d43592f[m
+Author: htynkn <htynkn@163.com>
+Date:   Sun Jul 22 13:58:15 2012 +0000
+
+    1.使用mono.addins框架，改下载功能为插件式。
+    2.针对跳转问题，分析真实页面。
+    3.第一个插件土豆豆单完成。

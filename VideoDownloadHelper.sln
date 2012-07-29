@@ -18,10 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.YoukuUserHome", "VideoDownloadHelper.YoukuUserHome\VideoDownloadHelper.YoukuUserHome.csproj", "{DE311F90-6650-4A5B-86EE-21241B6696E3}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
