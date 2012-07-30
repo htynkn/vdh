@@ -16,8 +16,8 @@ namespace VideoDownloadHelper.Builder
             //Type t = typeof(IPlugin);
             //String location = t.Assembly.Location;
             //location = location.Remove(location.LastIndexOf("\\") + 1);
-            String location = @"D:\我的资料库\Documents\Visual Studio 2010\Projects\tyvdh\VideoDownloadHelper\bin\Release\plugsins\";
-            String location2 = @"D:\我的资料库\Documents\Visual Studio 2010\Projects\tyvdh\VideoDownloadHelper\bin\Debug\plugsins\";
+            String location = @"D:\GitRepository\vdh\VideoDownloadHelper\bin\Release\plugsins\";
+            String location2 = @"D:\GitRepository\vdh\VideoDownloadHelper\bin\Debug\plugsins\";
 
             if (!Directory.Exists(location))
             {

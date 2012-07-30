@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 using Mono.Addins;
 
-[assembly: AddinRoot("VideoDownloadHelper", "1.3", Url = "http://tyvdh.sourceforge.net")]
+[assembly: AddinRoot("VideoDownloadHelper","1.4", Url = "http://htynkn.github.com/vdh/")]
 
 namespace VideoDownloadHelper
 {
@@ -21,7 +21,6 @@ namespace VideoDownloadHelper
         public MainForm()
         {
             InitializeComponent();
-
 
             String path = Application.StartupPath + "\\plugsins";
 
@@ -53,6 +52,7 @@ namespace VideoDownloadHelper
             bool hasPlugin = false;
 
             targetPlugin = null;
+
             foreach (IPlugin plugin in AddinManager.GetExtensionObjects<IPlugin>())
             {
 
@@ -74,7 +74,7 @@ namespace VideoDownloadHelper
             if (!hasPlugin)
             {
                 MessageBox.Show("没有找到插件...\n请检查plugins目录是否存在或者重新下载程序", "出错了", MessageBoxButtons.OK);
-                System.Diagnostics.Process.Start("http://sourceforge.net/projects/tyvdh/files/latest/download");
+                System.Diagnostics.Process.Start("http://github.com/htynkn/vdh/downloads");
                 return;
             }
 
@@ -304,7 +304,7 @@ namespace VideoDownloadHelper
             {
                 if (MessageBox.Show(notice + "\n点击确定跳到下载页面", "缺少必要的文件", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
                 {
-                    System.Diagnostics.Process.Start("http://sourceforge.net/projects/tyvdh/files/latest/download");
+                    System.Diagnostics.Process.Start("http://github.com/htynkn/vdh/downloads");
                 }
                 this.Close();
             }
@@ -361,7 +361,7 @@ namespace VideoDownloadHelper
 
         private void currentVersion_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://sourceforge.net/projects/tyvdh/files/latest/download");
+            System.Diagnostics.Process.Start("http://htynkn.github.com/vdh/");
         }
     }
 }

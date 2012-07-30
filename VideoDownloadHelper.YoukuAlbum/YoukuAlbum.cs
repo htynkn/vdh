@@ -9,7 +9,7 @@ using NSoup.Select;
 using NSoup;
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.3")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.4")]
 
 namespace VideoDownloadHelper.YoukuAlbum
 {
