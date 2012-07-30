@@ -83,7 +83,7 @@ namespace VideoDownloadHelper.TudouAlbum
                 defaultCode = dtemp[dtemp.Length - 1].Trim();
                 defaultCode = defaultCode.Substring(1, defaultCode.Length - 2);
 
-                String listData = WordHelper.CutWordByKeyword(javaScript, ",listData=", "]").Trim() + "]";
+                String listData = WordHelper.CutWordByKeyword(javaScript, ",listData=", "var").Trim();
                 lists = JsonConvert.DeserializeObject<List<ItemDown>>(listData);
             }
 
@@ -136,6 +136,7 @@ namespace VideoDownloadHelper.TudouAlbum
     public class ItemDown
     {
         private String _icode;
+        private String characterlist;
 
         public String icode
         {
