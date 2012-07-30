@@ -9,7 +9,7 @@ namespace VideoDownloadHelper
 {
     public class ProgramHelper
     {
-        public static int number = 5; //1.3版本
+        public static int number = 6; //1.4版本
 
         public static String CheckFiles(String[] names)
         {
@@ -42,7 +42,7 @@ namespace VideoDownloadHelper
         {
             StringBuilder sb = new StringBuilder();
 
-            String url = "http://tyvdh.sourceforge.net/program/update.xml";
+            String url = "http://htynkn.github.com/vdh/program/update.xml";
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(url);
             XmlNode root = xmlDoc.SelectSingleNode("update");
