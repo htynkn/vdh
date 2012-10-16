@@ -69,6 +69,10 @@
       <Project>{7A99B578-EE73-4CC8-8300-E455B6308902}</Project>
       <Name>VideoDownloadHelper.YoukuAlbum</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VideoDownloadHelper.YoukuUserHome2\VideoDownloadHelper.YoukuUserHome2.csproj">
+      <Project>{467FD2B3-73E8-4BBD-A87E-810F3501B4B2}</Project>
+      <Name>VideoDownloadHelper.YoukuUserHome2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VideoDownloadHelper.YoukuUserHome\VideoDownloadHelper.YoukuUserHome.csproj">
       <Project>{DE311F90-6650-4A5B-86EE-21241B6696E3}</Project>
       <Name>VideoDownloadHelper.YoukuUserHome</Name>

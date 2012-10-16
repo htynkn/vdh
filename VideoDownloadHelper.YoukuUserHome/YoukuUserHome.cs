@@ -28,12 +28,6 @@ namespace VideoDownloadHelper.YoukuUserHome
 
         public bool isVaild(string url)
         {
-            //if (url.StartsWith("http://u.youku.com/user_show/id_") && url.EndsWith(".html"))
-            //{
-            //    String key = WordHelper.CutWordByKeyword(url, "http://u.youku.com/user_show/id_", ".html");
-            //    url = String.Format("http://u.youku.com/user_video/id_{0}.html", key);
-            //}
-
             if (url.StartsWith("http://u.youku.com/user_video/id_") && url.EndsWith(".html"))
             {
                 this.Url = url;
@@ -72,7 +66,7 @@ namespace VideoDownloadHelper.YoukuUserHome
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Items[index].Url, "utf-8");
             Document doc = NSoupClient.Parse(temp);
             Element et = doc.Select("div[id=fn_favodownload] a[id=fn_download]").First;
-            String down=et.Attr("_href");
+            String down = et.Attr("_href");
             Console.WriteLine(down);
             System.Diagnostics.Process.Start(down);
         }
