@@ -55,6 +55,9 @@ namespace VideoDownloadHelper.TudouAlbum
             Element et = doc.Select("div#playItems").First;
             Elements list = et.Select("div.pack_video_card>div.txt a");
 
+            Element scripts = doc.Select("script")[2];
+            this.Aid = WordHelper.CutWordByKeyword(scripts.Html(), "aid: \'", "\',");
+
             foreach (Element item in list)
             {
                 String url = item.Attr("href");
@@ -74,17 +77,10 @@ namespace VideoDownloadHelper.TudouAlbum
         {
             if (lists == null)
             {
-                String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(items[index].Url, "gbk");
-                Document doc = NSoupClient.Parse(temp);
-                Element script = doc.Select("body>script").First();
-                String javaScript = script.OuterHtml();
-                String d = WordHelper.CutWordByKeyword(javaScript, "icode =", ",cid");
-                String[] dtemp = d.Split('|');
-                defaultCode = dtemp[dtemp.Length - 1].Trim();
-                defaultCode = defaultCode.Substring(1, defaultCode.Length - 2);
-
-                String listData = WordHelper.CutWordByKeyword(javaScript, ",listData=", "var").Trim();
-                lists = JsonConvert.DeserializeObject<List<ItemDown>>(listData);
+                String targetUrl=String.Format("http://www.tudou.com/tva/srv/alist.action?app=4&a={0}",this.Aid);
+                String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(targetUrl, "gbk");
+                
+                lists = JsonConvert.DeserializeObject<List<ItemDown>>(temp);
             }
 
             String[] targets = this.Items[index].Url.Split('/');
@@ -131,6 +127,20 @@ namespace VideoDownloadHelper.TudouAlbum
         }
 
         private String url;
+
+        public string Aid
+        {
+            get
+            {
+                return this.aid;
+            }
+            set
+            {
+                this.aid = value;
+            }
+        }
+
+        private String aid;
     }
 
     public class ItemDown

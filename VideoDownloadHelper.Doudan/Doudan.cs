@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.Doudan
     {
         public int GetVersionNumber()
         {
-            return 1;
+            return 2;
         }
 
         public string GetVersion()
         {
-            return "V1.0";
+            return "V1.1";
         }
 
         public bool isVaild(string url)
@@ -73,8 +73,8 @@ namespace VideoDownloadHelper.Doudan
             Document doc = NSoupClient.Parse(temp);
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
-            String iid=WordHelper.CutWordByKeyword(target, "iid =", ",").Trim();
-            System.Diagnostics.Process.Start("tudou://" + iid);
+            String iid = WordHelper.CutWordByKeyword(target, "iid:", ",").Trim();
+            System.Diagnostics.Process.Start("tudou://" + iid + "/");
         }
 
         public List<BaseItem> Items
