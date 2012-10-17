@@ -287,15 +287,6 @@ namespace VideoDownloadHelper
         }
         #endregion
 
-        #region 关于窗体
-
-        private void About_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://tyvdh.sourceforge.net/");
-        }
-
-        #endregion
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             String[] names = { "NSoup.dll", "Licence.txt" };
@@ -356,12 +347,17 @@ namespace VideoDownloadHelper
 
         private void OfficeSite_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://tyvdh.sourceforge.net/");
+            System.Diagnostics.Process.Start("http://htynkn.github.com/vdh/");
         }
 
         private void currentVersion_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://htynkn.github.com/vdh/");
+        }
+
+        private void UpdatePlugins_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
