@@ -15,5 +15,15 @@ namespace VideoDownloadHelper
         {
             InitializeComponent();
         }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void updateWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
     }
 }

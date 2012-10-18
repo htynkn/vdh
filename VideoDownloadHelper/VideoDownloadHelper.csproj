@@ -120,6 +120,9 @@
     <EmbeddedResource Include="ReadLicence.resx">
       <DependentUpon>ReadLicence.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePluginForm.resx">
+      <DependentUpon>UpdatePluginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateWindow.resx">
       <DependentUpon>UpdateWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +142,12 @@
     </Compile>
     <Compile Include="ReadLicence.Designer.cs">
       <DependentUpon>ReadLicence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePluginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePluginForm.Designer.cs">
+      <DependentUpon>UpdatePluginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateWindow.cs">
       <SubType>Form</SubType>
