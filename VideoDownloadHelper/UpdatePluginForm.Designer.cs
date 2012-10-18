@@ -33,10 +33,13 @@
             this.update = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.updateWorker = new System.ComponentModel.BackgroundWorker();
+            this.noticeBox = new System.Windows.Forms.TextBox();
+            this.pluginBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pluginBox
             // 
+            this.pluginBox.Controls.Add(this.noticeBox);
             this.pluginBox.Location = new System.Drawing.Point(13, 13);
             this.pluginBox.Name = "pluginBox";
             this.pluginBox.Size = new System.Drawing.Size(344, 172);
@@ -65,7 +68,16 @@
             // 
             // updateWorker
             // 
+            this.updateWorker.WorkerReportsProgress = true;
             this.updateWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.updateWorker_DoWork);
+            // 
+            // noticeBox
+            // 
+            this.noticeBox.Location = new System.Drawing.Point(7, 21);
+            this.noticeBox.Multiline = true;
+            this.noticeBox.Name = "noticeBox";
+            this.noticeBox.Size = new System.Drawing.Size(331, 145);
+            this.noticeBox.TabIndex = 0;
             // 
             // UpdatePluginForm
             // 
@@ -81,6 +93,8 @@
             this.Name = "UpdatePluginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "插件升级";
+            this.pluginBox.ResumeLayout(false);
+            this.pluginBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -91,5 +105,6 @@
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button exit;
         private System.ComponentModel.BackgroundWorker updateWorker;
+        private System.Windows.Forms.TextBox noticeBox;
     }
 }
