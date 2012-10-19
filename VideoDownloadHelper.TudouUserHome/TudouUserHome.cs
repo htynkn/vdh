@@ -78,8 +78,8 @@ namespace VideoDownloadHelper.TudouUserHome
             Document doc = NSoupClient.Parse(temp);
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
-            String iid = WordHelper.CutWordByKeyword(target, "iid =", ",").Trim();
-            System.Diagnostics.Process.Start("tudou://" + iid);
+            String iid = WordHelper.CutWordByKeyword(target, "iid: ", ",").Trim();
+            System.Diagnostics.Process.Start("tudou://" + iid + "/");
         }
 
         public List<BaseItem> Items

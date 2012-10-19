@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public int GetVersionNumber()
         {
-            return 1;
+            return 2;
         }
 
         public string GetVersion()
         {
-            return "V1.0";
+            return "V1.1";
         }
 
         public bool isVaild(string url)
@@ -71,30 +71,27 @@ namespace VideoDownloadHelper.TudouAlbum
         }
 
         String defaultCode = String.Empty;
-        List<ItemDown> lists;
+        ItemList lists;
 
         public void Down(int index)
         {
             if (lists == null)
             {
-                String targetUrl=String.Format("http://www.tudou.com/tva/srv/alist.action?app=4&a={0}",this.Aid);
-                String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(targetUrl, "gbk");
-                
-                lists = JsonConvert.DeserializeObject<List<ItemDown>>(temp);
+                String targetUrl = String.Format("http://www.tudou.com/tva/srv/alist.action?app=4&a={0}", this.Aid);
+                String temp = WebHelper.GetHtmlCodeByWebClient(targetUrl, "UTF-8");
+                lists = JsonConvert.DeserializeObject<ItemList>(temp);
             }
 
-            String[] targets = this.Items[index].Url.Split('/');
-            String code = defaultCode;
-            if (targets.Length == 6)
-            {
-                code = targets[5].Remove(targets[5].LastIndexOf(".")).ToLower();
-            }
+            String url = this.Items[index].Url;
+            String[] tempCode = url.Split('/');
+            String code = tempCode[tempCode.Length - 1];
+            code = code.Split('.')[0];
 
-            foreach (ItemDown down in lists)
+            foreach (Item item in lists.items)
             {
-                if (code.Equals(down.icode))
+                if (code.Equals(item.acode))
                 {
-                    System.Diagnostics.Process.Start("tudou://"+down.iid);
+                    System.Diagnostics.Process.Start("tudou://" + item.iid.Trim() + "/");
                     break;
                 }
             }
@@ -143,16 +140,15 @@ namespace VideoDownloadHelper.TudouAlbum
         private String aid;
     }
 
-    public class ItemDown
+    public class ItemList
     {
-        private String _icode;
-        private String characterlist;
+        public List<Item> items;
+        public String updatedIid;
+    }
 
-        public String icode
-        {
-            get { return _icode; }
-            set { _icode = value.ToLower(); }
-        }
+    public class Item
+    {
         public String iid;
+        public String acode;
     }
 }

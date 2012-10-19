@@ -357,7 +357,8 @@ namespace VideoDownloadHelper
 
         private void UpdatePlugins_Click(object sender, EventArgs e)
         {
-
+            Form pluginUpdateForm = new UpdatePluginForm();
+            pluginUpdateForm.ShowDialog();
         }
     }
 }

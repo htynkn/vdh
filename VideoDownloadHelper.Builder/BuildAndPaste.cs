@@ -16,8 +16,8 @@ namespace VideoDownloadHelper.Builder
             //Type t = typeof(IPlugin);
             //String location = t.Assembly.Location;
             //location = location.Remove(location.LastIndexOf("\\") + 1);
-            String location = @"D:\Git\vdh\VideoDownloadHelper\bin\Release\plugsins\";
-            String location2 = @"D:\Git\vdh\VideoDownloadHelper\bin\Debug\plugsins\";
+            String location = @"D:\GitRepository\vdh\VideoDownloadHelper\bin\Release\plugsins\";
+            String location2 = @"D:\GitRepository\vdh\VideoDownloadHelper\bin\Debug\plugsins\";
 
             if (!Directory.Exists(location))
             {
@@ -33,11 +33,11 @@ namespace VideoDownloadHelper.Builder
             Type[] types = new Type[] { typeof(VideoDownloadHelper.Doudan.Doudan),typeof(VideoDownloadHelper.TudouUserHome.TudouUserHome),typeof(VideoDownloadHelper.YoukuUserHome2.YoukuUserHome2),typeof(VideoDownloadHelper.TudouAlbum.TudouAlbum),typeof(VideoDownloadHelper.YoukuAlbum.YoukuAlbum),typeof(VideoDownloadHelper.YoukuUserHome.YoukuUserHome)};
             foreach (Type type in types)
             {
-                String targetPath = location + type.FullName + ".dll";
-                String targetPath2 = location2 + type.FullName + ".dll";
+                String targetPath = location + type.Name + ".dll";
+                String targetPath2 = location2 + type.Name + ".dll";
                
                 File.Copy(type.Assembly.Location, targetPath, true) ;
-                Console.WriteLine("复制文件 {0} 到 {1}", type.Name + ".dll", targetPath);
+                Console.WriteLine("复制文件 {0} 到 {1}", type.Name +".dll", targetPath);
                 File.Copy(type.Assembly.Location, targetPath2, true);
                 Console.WriteLine("复制文件 {0} 到 {1}", type.Name + ".dll", targetPath2);
             }

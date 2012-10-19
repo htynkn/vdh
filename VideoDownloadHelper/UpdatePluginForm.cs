@@ -19,9 +19,9 @@ namespace VideoDownloadHelper
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("升级"))
+            if (update.Text.Equals("升级"))
             {
-                if (updateWorker.IsBusy)
+                if (!updateWorker.IsBusy)
                 {
                     this.Text = "取消";
                     updateWorker.RunWorkerAsync();
@@ -41,6 +41,7 @@ namespace VideoDownloadHelper
             client.BaseUrl = "https://api.github.com";
             var request = new RestRequest("repos/htynkn/vdh/downloads", Method.GET);
             IRestResponse res = client.Execute(request);
+            String con = res.Content;
         }
 
         private enum UpdateProgress { Start = 1, Getting, Download, Complete };

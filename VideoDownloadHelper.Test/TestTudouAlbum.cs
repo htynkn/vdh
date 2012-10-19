@@ -42,7 +42,7 @@ namespace VideoDownloadHelper.Test
         [Test]
         public void TestDown()
         {
-            plugin.isVaild("http://www.tudou.com/albumcover/rPbYLHD6a1U.html");
+            plugin.isVaild("http://www.tudou.com/albumcover/cghDyIIHl0M.html");
             plugin.GetList();
             plugin.Down(0);
         }
