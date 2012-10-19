@@ -2,16 +2,21 @@
 
 土豆网和优酷网都是相当优秀的网站，其上有众多资源。而官网提供的下载工具，但是只能一个个下载，有时候需要下载某个豆单或者专辑的所有视频，一个个下载显然效率过低。这个工具只是调用了官方下载工具而已，不是地址嗅探工具。使用需要安装相应网站的下载工具。
 
+##运行环境##
+
+软件需要Net Framework支持，如果无法运行请尝试安装：
+http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
+
 ##下载地址##
 
-* 可执行程序下载 http://sourceforge.net/projects/tyvdh/files/latest/download
+* 可执行程序下载 https://github.com/htynkn/vdh/downloads
 * 源代码下载 https://github.com/htynkn/vdh/zipball/master
 
 ##支持的类型##
 
 * 土豆豆单：http://www.tudou.com/playlist/id/10328858/
 * 土豆用户主页：http://www.tudou.com/home/item_u63950822s0p1.html
-* 土豆官方：http://www.tudou.com/albumcover/FZasxNmcFBM.html
+* 土豆官方：http://www.tudou.com/albumcover/cghDyIIHl0M.html
 * 优酷专辑：http://www.youku.com/playlist_show/id_3884610.html
 * 优酷用户主页：http://u.youku.com/user_video/id_UNjQxMDM2ODg=.html
 
