@@ -70,7 +70,6 @@ namespace VideoDownloadHelper.TudouAlbum
             return this.Items;
         }
 
-        String defaultCode = String.Empty;
         ItemList lists;
 
         public void Down(int index)
@@ -82,16 +81,26 @@ namespace VideoDownloadHelper.TudouAlbum
                 lists = JsonConvert.DeserializeObject<ItemList>(temp);
             }
 
-            String url = this.Items[index].Url;
-            String[] tempCode = url.Split('/');
-            String code = tempCode[tempCode.Length - 1];
-            code = code.Split('.')[0];
-
+            String code = String.Empty;
+            if (index == 0)
+            {
+                code = lists.items[0].icode;
+            }
+            else
+            {
+                String url = this.Items[index].Url;
+                String[] tempCode = url.Split('/');
+                code = tempCode[tempCode.Length - 1];
+                if (code.Contains("html"))
+                {
+                    code = code.Split('.')[0];
+                }
+            }
             foreach (Item item in lists.items)
             {
-                if (code.Equals(item.acode))
+                if (code.Equals(item.icode))
                 {
-                    System.Diagnostics.Process.Start("tudou://" + item.iid.Trim() + "/");
+                    System.Diagnostics.Process.Start("tudou://" + item.iid + "/");
                     break;
                 }
             }
@@ -150,5 +159,6 @@ namespace VideoDownloadHelper.TudouAlbum
     {
         public String iid;
         public String acode;
+        public String icode;
     }
 }

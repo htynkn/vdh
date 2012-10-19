@@ -357,8 +357,9 @@ namespace VideoDownloadHelper
 
         private void UpdatePlugins_Click(object sender, EventArgs e)
         {
-            Form pluginUpdateForm = new UpdatePluginForm();
-            pluginUpdateForm.ShowDialog();
+            MessageBox.Show("即将提供...请期待");
+            //Form pluginUpdateForm = new UpdatePluginForm();
+            //pluginUpdateForm.ShowDialog();
         }
     }
 }

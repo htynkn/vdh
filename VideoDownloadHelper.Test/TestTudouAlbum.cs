@@ -45,6 +45,7 @@ namespace VideoDownloadHelper.Test
             plugin.isVaild("http://www.tudou.com/albumcover/cghDyIIHl0M.html");
             plugin.GetList();
             plugin.Down(0);
+            plugin.Down(2);
         }
     }
 }
