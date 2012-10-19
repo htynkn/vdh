@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public int GetVersionNumber()
         {
-            return 1;
+            return 2;
         }
 
         public string GetVersion()
         {
-            return "V1.0";
+            return "V1.1";
         }
 
         public bool isVaild(string url)
@@ -55,6 +55,9 @@ namespace VideoDownloadHelper.TudouAlbum
             Element et = doc.Select("div#playItems").First;
             Elements list = et.Select("div.pack_video_card>div.txt a");
 
+            Element scripts = doc.Select("script")[2];
+            this.Aid = WordHelper.CutWordByKeyword(scripts.Html(), "aid: \'", "\',");
+
             foreach (Element item in list)
             {
                 String url = item.Attr("href");
@@ -67,38 +70,37 @@ namespace VideoDownloadHelper.TudouAlbum
             return this.Items;
         }
 
-        String defaultCode = String.Empty;
-        List<ItemDown> lists;
+        ItemList lists;
 
         public void Down(int index)
         {
             if (lists == null)
             {
-                String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(items[index].Url, "gbk");
-                Document doc = NSoupClient.Parse(temp);
-                Element script = doc.Select("body>script").First();
-                String javaScript = script.OuterHtml();
-                String d = WordHelper.CutWordByKeyword(javaScript, "icode =", ",cid");
-                String[] dtemp = d.Split('|');
-                defaultCode = dtemp[dtemp.Length - 1].Trim();
-                defaultCode = defaultCode.Substring(1, defaultCode.Length - 2);
-
-                String listData = WordHelper.CutWordByKeyword(javaScript, ",listData=", "var").Trim();
-                lists = JsonConvert.DeserializeObject<List<ItemDown>>(listData);
+                String targetUrl = String.Format("http://www.tudou.com/tva/srv/alist.action?app=4&a={0}", this.Aid);
+                String temp = WebHelper.GetHtmlCodeByWebClient(targetUrl, "UTF-8");
+                lists = JsonConvert.DeserializeObject<ItemList>(temp);
             }
 
-            String[] targets = this.Items[index].Url.Split('/');
-            String code = defaultCode;
-            if (targets.Length == 6)
+            String code = String.Empty;
+            if (index == 0)
             {
-                code = targets[5].Remove(targets[5].LastIndexOf(".")).ToLower();
+                code = lists.items[0].icode;
             }
-
-            foreach (ItemDown down in lists)
+            else
             {
-                if (code.Equals(down.icode))
+                String url = this.Items[index].Url;
+                String[] tempCode = url.Split('/');
+                code = tempCode[tempCode.Length - 1];
+                if (code.Contains("html"))
                 {
-                    System.Diagnostics.Process.Start("tudou://"+down.iid);
+                    code = code.Split('.')[0];
+                }
+            }
+            foreach (Item item in lists.items)
+            {
+                if (code.Equals(item.icode))
+                {
+                    System.Diagnostics.Process.Start("tudou://" + item.iid + "/");
                     break;
                 }
             }
@@ -131,18 +133,32 @@ namespace VideoDownloadHelper.TudouAlbum
         }
 
         private String url;
+
+        public string Aid
+        {
+            get
+            {
+                return this.aid;
+            }
+            set
+            {
+                this.aid = value;
+            }
+        }
+
+        private String aid;
     }
 
-    public class ItemDown
+    public class ItemList
     {
-        private String _icode;
-        private String characterlist;
+        public List<Item> items;
+        public String updatedIid;
+    }
 
-        public String icode
-        {
-            get { return _icode; }
-            set { _icode = value.ToLower(); }
-        }
+    public class Item
+    {
         public String iid;
+        public String acode;
+        public String icode;
     }
 }

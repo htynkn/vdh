@@ -32,7 +32,7 @@ namespace VideoDownloadHelper.Test
         {
             plugin.isVaild("http://www.tudou.com/albumcover/t1tzlUNNYo4.html");
             plugin.GetList();
-            Assert.AreEqual(62, plugin.Items.Count);
+            Assert.AreEqual(84, plugin.Items.Count);
 
             plugin.isVaild("http://www.tudou.com/albumcover/rPbYLHD6a1U.html");
             plugin.GetList();
@@ -42,9 +42,10 @@ namespace VideoDownloadHelper.Test
         [Test]
         public void TestDown()
         {
-            plugin.isVaild("http://www.tudou.com/albumcover/rPbYLHD6a1U.html");
+            plugin.isVaild("http://www.tudou.com/albumcover/cghDyIIHl0M.html");
             plugin.GetList();
             plugin.Down(0);
+            plugin.Down(2);
         }
     }
 }

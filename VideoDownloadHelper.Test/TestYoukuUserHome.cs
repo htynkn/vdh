@@ -11,11 +11,12 @@ namespace VideoDownloadHelper.Test
     public class TestYoukuUserHome : ITest
     {
         IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
+        String testUrl = "http://u.youku.com/user_video/id_UNjQxMDM2ODg=.html";
 
         [Test]
         public void TestGetVersionNumber()
         {
-            Assert.AreEqual("1", plugin.GetVersionNumber());
+            Assert.AreEqual(1, plugin.GetVersionNumber());
         }
 
         [Test]
@@ -27,20 +28,20 @@ namespace VideoDownloadHelper.Test
         [Test]
         public void TestisVaild()
         {
-            Assert.True(plugin.isVaild("http://u.youku.com/user_video/id_UMjQ1MzY3NzI=.html"));
+            Assert.True(plugin.isVaild(testUrl));
         }
 
         [Test]
         public void TestGetList()
         {
-            plugin.isVaild("http://u.youku.com/user_video/id_UMjc3NjMwMjA=.html");
+            plugin.isVaild(testUrl);
             Assert.AreEqual(30, plugin.GetList().Count);
         }
 
         [Test]
         public void TestDown()
         {
-            plugin.isVaild("http://u.youku.com/user_video/id_UMjc3NjMwMjA=.html");
+            plugin.isVaild(testUrl);
             plugin.GetList();
             plugin.Down(0);
         }
