@@ -37,3 +37,8 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 ##联系我##
 * 博客：http://htynkn.cnblogs.com
 * sina微博：http://weibo.com/htynkn
+
+
+##其他##
+
+https://www.ohloh.net/p/vdh
