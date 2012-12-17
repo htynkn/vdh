@@ -36,6 +36,10 @@ namespace VideoDownloadHelper.Test
             plugin.isVaild("http://www.tudou.com/home/item_u36343961s0p1.html");
             List<BaseItem> list = plugin.GetList();
             Assert.AreEqual(3, list.Count);
+
+            plugin.isVaild("http://www.tudou.com/home/_53621156");
+            list = plugin.GetList();
+            Assert.AreEqual(40, list.Count);
         }
 
         [Test]
