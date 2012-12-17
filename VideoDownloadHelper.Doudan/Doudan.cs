@@ -10,7 +10,7 @@ using System.Net;
 
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.4")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.5")]
 
 namespace VideoDownloadHelper.Doudan
 {
