@@ -19,12 +19,12 @@ namespace VideoDownloadHelper.YoukuUserHome2
 
         public int GetVersionNumber()
         {
-            return 1;
+            return 2;
         }
 
         public string GetVersion()
         {
-            return "V1.0";
+            return "V1.1";
         }
 
         public bool isVaild(string url)
@@ -66,9 +66,8 @@ namespace VideoDownloadHelper.YoukuUserHome2
         {
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Items[index].Url, "utf-8");
             Document doc = NSoupClient.Parse(temp);
-            Element et = doc.Select("div[id=fn_favodownload] a[id=fn_download]").First;
+            Element et = doc.Select("a#fn_pc_download").First;
             String down = et.Attr("_href");
-            Console.WriteLine(down);
             System.Diagnostics.Process.Start(down);
         }
 
