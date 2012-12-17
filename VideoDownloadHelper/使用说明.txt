@@ -5,7 +5,6 @@
 软件采用插件式开发，plugins为插件目录，请不要删除或者修改。
 
 任何问题请发邮件至htynkn@163.com或者QQ联系：512395752[夜明的孤行灯]
-或者访问下载反馈地址：tyvdh.sourceforge.net/feedback.html
 
 目前软件默认支持5种格式：
 1.土豆豆单：http://www.tudou.com/playlist/id/10328858/

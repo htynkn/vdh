@@ -41,7 +41,6 @@
             this.VideoTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DownSelectItem = new System.Windows.Forms.Button();
             this.ExitProgram = new System.Windows.Forms.Button();
-            this.UpdatePlugins = new System.Windows.Forms.Button();
             this.getlistWorker = new System.ComponentModel.BackgroundWorker();
             this.updateChecker = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -151,7 +150,7 @@
             // 
             // DownSelectItem
             // 
-            this.DownSelectItem.Location = new System.Drawing.Point(28, 353);
+            this.DownSelectItem.Location = new System.Drawing.Point(36, 353);
             this.DownSelectItem.Name = "DownSelectItem";
             this.DownSelectItem.Size = new System.Drawing.Size(75, 23);
             this.DownSelectItem.TabIndex = 2;
@@ -161,23 +160,13 @@
             // 
             // ExitProgram
             // 
-            this.ExitProgram.Location = new System.Drawing.Point(252, 353);
+            this.ExitProgram.Location = new System.Drawing.Point(241, 353);
             this.ExitProgram.Name = "ExitProgram";
             this.ExitProgram.Size = new System.Drawing.Size(75, 23);
             this.ExitProgram.TabIndex = 2;
             this.ExitProgram.Text = "退出程序";
             this.ExitProgram.UseVisualStyleBackColor = true;
             this.ExitProgram.Click += new System.EventHandler(this.ExitProgram_Click);
-            // 
-            // UpdatePlugins
-            // 
-            this.UpdatePlugins.Location = new System.Drawing.Point(144, 353);
-            this.UpdatePlugins.Name = "UpdatePlugins";
-            this.UpdatePlugins.Size = new System.Drawing.Size(75, 23);
-            this.UpdatePlugins.TabIndex = 3;
-            this.UpdatePlugins.Text = "升级检查";
-            this.UpdatePlugins.UseVisualStyleBackColor = true;
-            this.UpdatePlugins.Click += new System.EventHandler(this.UpdatePlugins_Click);
             // 
             // getlistWorker
             // 
@@ -228,7 +217,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 406);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.UpdatePlugins);
             this.Controls.Add(this.ExitProgram);
             this.Controls.Add(this.DownSelectItem);
             this.Controls.Add(this.groupBox2);
@@ -259,7 +247,6 @@
         private System.Windows.Forms.Button SelectAll;
         private System.Windows.Forms.Button DownSelectItem;
         private System.Windows.Forms.Button ExitProgram;
-        private System.Windows.Forms.Button UpdatePlugins;
         protected internal System.Windows.Forms.TextBox TargetUrl;
         private System.Windows.Forms.ListView VideoInfoList;
         private System.Windows.Forms.Label MessageLabel;
