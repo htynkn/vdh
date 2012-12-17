@@ -15,13 +15,13 @@ namespace VideoDownloadHelper.Test
         [Test]
         public void TestGetVersionNumber()
         {
-            Assert.AreEqual(1, plugin.GetVersionNumber());
+            Assert.AreEqual(2, plugin.GetVersionNumber());
         }
 
         [Test]
         public void TestGetVersion()
         {
-            Assert.AreEqual("V1.0", plugin.GetVersion());
+            Assert.AreEqual("V1.1", plugin.GetVersion());
         }
 
         [Test]
