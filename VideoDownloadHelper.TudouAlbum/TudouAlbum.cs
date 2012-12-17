@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public int GetVersionNumber()
         {
-            return 2;
+            return 3;
         }
 
         public string GetVersion()
         {
-            return "V1.1";
+            return "V2.0";
         }
 
         public bool isVaild(string url)
@@ -52,8 +52,20 @@ namespace VideoDownloadHelper.TudouAlbum
                 temp = WebHelper.GetHtmlCodeByWebClient(this.Url, "gbk");
             }
             Document doc = NSoupClient.Parse(temp);
-            Element et = doc.Select("div#playItems").First;
-            Elements list = et.Select("div.pack_video_card>div.txt a");
+
+            Elements list = new Elements();
+            Elements ets = doc.Select("div.playitems");
+
+            foreach (Element et in ets)
+            {
+                if (et.Select("textarea.lazyContent").Count > 0)
+                {
+                    throw new Exception("暂时不支持这种网址");
+                }
+
+                Elements tempList = et.Select("div.pack_video_card>div.txt a");
+                list.AddRange(tempList);
+            }
 
             Element scripts = doc.Select("script")[2];
             this.Aid = WordHelper.CutWordByKeyword(scripts.Html(), "aid: \'", "\',");
