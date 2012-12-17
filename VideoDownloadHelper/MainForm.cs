@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 using Mono.Addins;
 
-[assembly: AddinRoot("VideoDownloadHelper","1.5", Url = "http://htynkn.github.com/vdh/")]
+[assembly: AddinRoot("VideoDownloadHelper", "1.5", Url = "http://htynkn.github.com/vdh/")]
 
 namespace VideoDownloadHelper
 {
@@ -190,7 +190,14 @@ namespace VideoDownloadHelper
             }
             catch (Exception ex)
             {
-                getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + "如果反复尝试均有此错误，可以联系QQ：512395752");
+                if (ex.Message.Equals("暂时不支持这种网址"))
+                {
+                    getlistWorker.ReportProgress(100, "暂时不支持这种网址,换一个吧");
+                }
+                else
+                {
+                    getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + "如果反复尝试均有此错误，可以联系QQ：512395752");
+                }
             }
         }
 
