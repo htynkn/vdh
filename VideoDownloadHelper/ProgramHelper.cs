@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Xml;
+using RestSharp;
 
 namespace VideoDownloadHelper
 {
@@ -40,21 +41,32 @@ namespace VideoDownloadHelper
 
         public static String UpdateCheck()
         {
-            StringBuilder sb = new StringBuilder();
+            var client = new RestClient();
+            client.BaseUrl = "http://htynkn.github.com";
 
-            String url = "http://htynkn.github.com/vdh/program/update.xml";
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(url);
-            XmlNode root = xmlDoc.SelectSingleNode("update");
-            XmlNode node1 = root.SelectSingleNode("version");
-            sb.Append(node1.FirstChild.Value).Append(",");
-            XmlNode node2 = root.SelectSingleNode("number");
-            sb.Append(node2.FirstChild.Value).Append(",");
-            XmlNode node3 = root.SelectSingleNode("description");
-            sb.Append(node3.FirstChild.Value).Append(",");
-            XmlNode node4 = root.SelectSingleNode("downlink");
-            sb.Append(node4.FirstChild.Value);
-            return sb.ToString();
+            var request = new RestRequest();
+            request.Resource = "vdh/program/update.xml";
+
+            IRestResponse<UpdateModel> response = client.Execute<UpdateModel>(request);
+            return response.Data.ToString();
+        }
+
+        private class UpdateModel
+        {
+            public String Version { get; set; }
+            public String Number { get; set; }
+            public String Description { get; set; }
+            public String Downlink { get; set; }
+
+            public override string ToString()
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(this.Version).Append(",");
+                sb.Append(this.Number).Append(",");
+                sb.Append(this.Description).Append(",");
+                sb.Append(this.Downlink);
+                return sb.ToString();
+            }
         }
     }
 }
