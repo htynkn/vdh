@@ -10,7 +10,7 @@ using System.Data;
 using Newtonsoft.Json;
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.5")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.6")]
 
 namespace VideoDownloadHelper.TudouAlbum
 {

@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 using Mono.Addins;
 
-[assembly: AddinRoot("VideoDownloadHelper", "1.5", Url = "http://htynkn.github.com/vdh/")]
+[assembly: AddinRoot("VideoDownloadHelper", "1.6", Url = "http://htynkn.github.com/vdh/")]
 
 namespace VideoDownloadHelper
 {
