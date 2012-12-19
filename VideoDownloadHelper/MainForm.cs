@@ -253,7 +253,11 @@ namespace VideoDownloadHelper
                     {
                         try
                         {
-                            targetPlugin.Down(i);
+                            String targetUrl = targetPlugin.Down(i);
+                            if (!targetPlugin.Equals(String.Empty))
+                            {
+                                System.Diagnostics.Process.Start(targetUrl);
+                            }
                             Thread.Sleep(1000);
                         }
                         catch (Win32Exception)

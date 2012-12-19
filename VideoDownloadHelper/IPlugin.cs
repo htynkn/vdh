@@ -13,7 +13,7 @@ namespace VideoDownloadHelper
         String GetVersion();
         bool isVaild(String url);
         List<BaseItem> GetList();
-        void Down(int index);
+        String Down(int index);
 
         List<BaseItem> Items { get; set; }
         String Url { get; set; }

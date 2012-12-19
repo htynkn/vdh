@@ -62,13 +62,13 @@ namespace VideoDownloadHelper.YoukuUserHome2
             return this.Items;
         }
 
-        public void Down(int index)
+        public String Down(int index)
         {
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Items[index].Url, "utf-8");
             Document doc = NSoupClient.Parse(temp);
             Element et = doc.Select("a#fn_pc_download").First;
             String down = et.Attr("_href");
-            System.Diagnostics.Process.Start(down);
+            return down;
         }
 
         public List<BaseItem> Items

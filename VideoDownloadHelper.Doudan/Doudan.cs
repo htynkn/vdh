@@ -67,14 +67,14 @@ namespace VideoDownloadHelper.Doudan
             return this.Items;
         }
 
-        public void Down(int index)
+        public String Down(int index)
         {
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(items[index].Url, "gbk");
             Document doc = NSoupClient.Parse(temp);
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
             String iid = WordHelper.CutWordByKeyword(target, "iid:", ",").Trim();
-            System.Diagnostics.Process.Start("tudou://" + iid + "/");
+            return "tudou://" + iid + "/";
         }
 
         public List<BaseItem> Items

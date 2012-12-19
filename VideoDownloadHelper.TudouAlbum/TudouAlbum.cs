@@ -84,7 +84,7 @@ namespace VideoDownloadHelper.TudouAlbum
 
         ItemList lists;
 
-        public void Down(int index)
+        public String Down(int index)
         {
             if (lists == null)
             {
@@ -112,10 +112,10 @@ namespace VideoDownloadHelper.TudouAlbum
             {
                 if (code.Equals(item.icode))
                 {
-                    System.Diagnostics.Process.Start("tudou://" + item.iid + "/");
-                    break;
+                    return "tudou://" + item.iid + "/";
                 }
             }
+            return String.Empty;
         }
 
         public List<BaseItem> Items
