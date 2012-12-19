@@ -11,10 +11,10 @@ namespace VideoDownloadHelper.Test.Plugin
     public class TestTudouAlbum : ITest
     {
         IPlugin plugin;
-        String[] urls = new String[] { "http://www.tudou.com/albumcover/fmxHfffw_Tc.html", "http://www.tudou.com/albumcover/ZjwXrvQ7k8U.html" };
-        Boolean[] table = new Boolean[] { true, true };
-        int[] count = new int[] { 16, 52 };
-        String[] down = new String[] { "tudou://150556869/", "tudou://50968420/" };
+        String[] urls = new String[] { "http://www.tudou.com/albumcover/fmxHfffw_Tc.html", "http://www.tudou.com/albumcover/ZjwXrvQ7k8U.html", "http://www.tudou.com/albumcover/Wr4ODPduQFs.html" };
+        Boolean[] table = new Boolean[] { true, true,true };
+        int[] count = new int[] { 16, 52, 38 };
+        String[] down = new String[] { "tudou://150556869/", "tudou://50968420/", "tudou://130672983/" };
 
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
