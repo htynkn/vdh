@@ -54,9 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTest.cs" />
     <Compile Include="ITest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestDoudan.cs" />
+    <Compile Include="Plugin\TestDoudan.cs" />
     <Compile Include="TestProgramHelper.cs" />
     <Compile Include="Plugin\TestTudouAlbum.cs" />
     <Compile Include="TestTudouUserHome.cs" />
