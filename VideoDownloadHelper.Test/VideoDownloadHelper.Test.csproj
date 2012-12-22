@@ -60,7 +60,7 @@
     <Compile Include="Plugin\TestDoudan.cs" />
     <Compile Include="TestProgramHelper.cs" />
     <Compile Include="Plugin\TestTudouAlbum.cs" />
-    <Compile Include="TestTudouUserHome.cs" />
+    <Compile Include="Plugin\TestTudouUserHome.cs" />
     <Compile Include="TestYoukuAlbum.cs" />
     <Compile Include="TestYoukuUserHome.cs" />
     <Compile Include="TestYoukuUserHome2.cs" />
