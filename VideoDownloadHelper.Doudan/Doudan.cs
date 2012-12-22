@@ -20,17 +20,22 @@ namespace VideoDownloadHelper.Doudan
     {
         public int GetVersionNumber()
         {
-            return 2;
+            return 3;
         }
 
         public string GetVersion()
         {
-            return "V1.1";
+            return "V1.2";
         }
 
         public bool isVaild(string url)
         {
             if (url.StartsWith("http://www.tudou.com/playlist/id/"))
+            {
+                this.Url = url;
+                return true;
+            }
+            else if (url.StartsWith("http://www.tudou.com/playlist/id") && url.EndsWith(".html"))
             {
                 this.Url = url;
                 return true;

@@ -14,22 +14,22 @@ namespace VideoDownloadHelper.Test.Plugin
         public override void TestFixtureSetUp()
         {
             this.plugin = new VideoDownloadHelper.Doudan.Doudan();
-            this.urls = new String[] { "http://www.tudou.com/listplay/Ry9axJ8HziA.html", "http://www.tudou.com/listplay/9g0AN7WqbuA.html", "http://www.tudou.com/listplay/SjzQteQQYAw.html" };
+            this.urls = new String[] { "http://www.tudou.com/playlist/id9009493.html", "http://www.tudou.com/playlist/id15444955.html", "http://www.tudou.com/playlist/id2151855.html" };
             this.table = new Boolean[] { true, true, true };
             this.count = new int[] { 24, 13, 76 };
-            this.down = new String[] { "tudou://150556869/", "tudou://50968420/", "tudou://130672983/" };
+            this.down = new String[] { "tudou://57410380/", "tudou://66971981/", "tudou://11755195/" };
         }
 
         [Test]
         public void TestGetVersionNumber()
         {
-            base.TestGetVersionNumber(2);
+            base.TestGetVersionNumber(3);
         }
 
         [Test]
         public void TestGetVersion()
         {
-            base.TestGetVersion("V1.1");
+            base.TestGetVersion("V1.2");
         }
 
         [Test]
