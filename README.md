@@ -40,4 +40,4 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 
 ##其他##
-<script type="text/javascript" src="http://www.ohloh.net/p/607603/widgets/project_cocomo.js"></script>
++ [https://www.ohloh.net/p/vdh](https://www.ohloh.net/p/vdh "Ohole地址")
