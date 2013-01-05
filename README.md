@@ -1,4 +1,4 @@
-﻿#土豆优酷视频批量下载助手#
+#土豆优酷视频批量下载助手#
 
 土豆网和优酷网都是相当优秀的网站，其上有众多资源。而官网提供的下载工具，但是只能一个个下载，有时候需要下载某个豆单或者专辑的所有视频，一个个下载显然效率过低。这个工具只是调用了官方下载工具而已，不是地址嗅探工具。使用需要安装相应网站的下载工具。
 
@@ -9,7 +9,7 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 ##下载地址##
 
-* 可执行程序下载 https://github.com/htynkn/vdh/downloads
+* 可执行程序下载 http://www.crsky.com/soft/22149.html
 * 源代码下载 https://github.com/htynkn/vdh/zipball/master
 
 ##支持的类型##
@@ -40,5 +40,4 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 
 ##其他##
-
-https://www.ohloh.net/p/vdh
+<script type="text/javascript" src="http://www.ohloh.net/p/607603/widgets/project_cocomo.js"></script>
