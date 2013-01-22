@@ -94,7 +94,10 @@ namespace VideoDownloadHelper
             }
             else
             {
-                MessageBox.Show("你输入的地址错误，请检查后重新输入", "出错了", MessageBoxButtons.OK);
+                if (DialogResult.OK == MessageBox.Show("你输入的地址错误，请检查后重新输入\r\n如果不清楚要输入何种类型的网址，请点击确认访问http://vdhelper.sinaapp.com/support.html", "出错了", MessageBoxButtons.OKCancel))
+                {
+                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com/support.html?1.6");
+                }
                 TargetUrl.Text = string.Empty;
                 TargetUrl.Focus();
             }
