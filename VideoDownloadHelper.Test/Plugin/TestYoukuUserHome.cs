@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using NUnit.Framework;
 
-namespace VideoDownloadHelper.Test
+namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
-    class TestYoukuUserHome2 : ITest
+    public class TestYoukuUserHome : ITest
     {
-        IPlugin plugin = new VideoDownloadHelper.YoukuUserHome2.YoukuUserHome2();
-        String testUrl = "http://i.youku.com/u/UMTE0NDEzOTky/videos/order_1_view_1_page_2";
+        IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
+        String testUrl = "http://u.youku.com/user_video/id_UNjQxMDM2ODg=.html";
 
         [Test]
         public void TestGetVersionNumber()
@@ -23,17 +24,20 @@ namespace VideoDownloadHelper.Test
         {
             Assert.AreEqual("V1.1", plugin.GetVersion());
         }
+
         [Test]
         public void TestisVaild()
         {
             Assert.True(plugin.isVaild(testUrl));
         }
+
         [Test]
         public void TestGetList()
         {
             plugin.isVaild(testUrl);
-            Assert.AreEqual(20, plugin.GetList().Count);
+            Assert.AreEqual(30, plugin.GetList().Count);
         }
+
         [Test]
         public void TestDown()
         {

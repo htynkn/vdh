@@ -65,9 +65,9 @@
     <Compile Include="TestProgramHelper.cs" />
     <Compile Include="Plugin\TestTudouAlbum.cs" />
     <Compile Include="Plugin\TestTudouUserHome.cs" />
-    <Compile Include="TestYoukuAlbum.cs" />
-    <Compile Include="TestYoukuUserHome.cs" />
-    <Compile Include="TestYoukuUserHome2.cs" />
+    <Compile Include="Plugin\TestYoukuAlbum.cs" />
+    <Compile Include="Plugin\TestYoukuUserHome.cs" />
+    <Compile Include="Plugin\TestYoukuUserHome2.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoDownloadHelper.Doudan\VideoDownloadHelper.Doudan.csproj">

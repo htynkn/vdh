@@ -190,12 +190,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="logo.ico" />
-    <Content Include="Mono.Addins.License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Nsoup.License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Res\logo.ico" />
     <Content Include="VideoDownloadHelper.License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
