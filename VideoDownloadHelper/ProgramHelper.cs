@@ -42,10 +42,10 @@ namespace VideoDownloadHelper
         public static String UpdateCheck()
         {
             var client = new RestClient();
-            client.BaseUrl = "http://htynkn.github.com";
+            client.BaseUrl = "http://vdhelper.sinaapp.com";
 
             var request = new RestRequest();
-            request.Resource = "vdh/program/update.xml";
+            request.Resource = "/program/update.xml";
 
             IRestResponse<UpdateModel> response = client.Execute<UpdateModel>(request);
             return response.Data.ToString();

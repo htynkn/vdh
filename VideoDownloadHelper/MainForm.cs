@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 using Mono.Addins;
 
-[assembly: AddinRoot("VideoDownloadHelper", "1.6", Url = "http://htynkn.github.com/vdh/")]
+[assembly: AddinRoot("VideoDownloadHelper", "1.6", Url = "http://vdhelper.sinaapp.com")]
 
 namespace VideoDownloadHelper
 {
@@ -74,7 +74,7 @@ namespace VideoDownloadHelper
             if (!hasPlugin)
             {
                 MessageBox.Show("没有找到插件...\n请检查plugins目录是否存在或者重新下载程序", "出错了", MessageBoxButtons.OK);
-                System.Diagnostics.Process.Start("http://github.com/htynkn/vdh/downloads");
+                System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
                 return;
             }
 
@@ -306,7 +306,7 @@ namespace VideoDownloadHelper
             {
                 if (MessageBox.Show(notice + "\n点击确定跳到下载页面", "缺少必要的文件", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
                 {
-                    System.Diagnostics.Process.Start("http://github.com/htynkn/vdh/downloads");
+                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
                 }
                 this.Close();
             }
@@ -358,12 +358,12 @@ namespace VideoDownloadHelper
 
         private void OfficeSite_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://htynkn.github.com/vdh/");
+            System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
         }
 
         private void currentVersion_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://htynkn.github.com/vdh/");
+            System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
         }
 
         private void UpdatePlugins_Click(object sender, EventArgs e)
