@@ -9,7 +9,7 @@ using NSoup;
 
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.6")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.7")]
 
 namespace VideoDownloadHelper.YoukuUserHome2
 {
