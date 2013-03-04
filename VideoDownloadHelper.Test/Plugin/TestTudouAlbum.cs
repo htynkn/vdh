@@ -14,10 +14,10 @@ namespace VideoDownloadHelper.Test.Plugin
         public override void TestFixtureSetUp()
         {
             this.plugin = new VideoDownloadHelper.TudouAlbum.TudouAlbum();
-            this.urls = new String[] { "http://www.tudou.com/albumcover/fmxHfffw_Tc.html", "http://www.tudou.com/albumcover/ZjwXrvQ7k8U.html", "http://www.tudou.com/albumcover/Wr4ODPduQFs.html" };
-            this.table = new Boolean[] { true, true, true };
-            this.count = new int[] { 16, 52, 38 };
-            this.down = new String[] { "tudou://150556869/", "tudou://130722383/", "tudou://130672983/" };
+            this.urls = new String[] { "http://www.tudou.com/albumcover/fmxHfffw_Tc.html" };
+            this.table = new Boolean[] { true };
+            this.count = new int[] { 16 };
+            this.down = new String[] { "tudou://150556869/" };
         }
 
         [Test]
