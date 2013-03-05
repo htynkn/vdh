@@ -22,7 +22,7 @@ namespace VideoDownloadHelper
         {
             InitializeComponent();
 
-            String path = Application.StartupPath + "\\plugsins";
+            String path = Application.StartupPath + "\\plugins";
 
             AddinManager.Initialize(path, path);
             AddinManager.Registry.Update();
