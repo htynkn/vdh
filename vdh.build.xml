@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<project name="vdhelper" default="build" basedir=".">
+  <property name="outputDir" value="output" />
+  <target name="build" description="build" depends="clean" >
+    <mkdir dir="${outputDir}" />
+    <solution configuration="release" solutionfile="VideoDownloadHelper.sln" outputdir="${outputDir}"/>
+	<delete dir="${outputDir}/zh-Hans" />
+	<delete>
+	  <fileset basedir="${outputDir}">
+	      <include name="VideoDownloadHelper.Test.dll"/>
+          <include name="*nunit*" />
+          <include name="*.pdb" />
+      </fileset>
+	</delete>
+	<mkdir dir="${outputDir}/plugins"/>
+	<move todir="${outputDir}/plugins">
+      <fileset basedir="${outputDir}">
+        <include name="VideoDownloadHelper.*.dll" />
+      </fileset>
+    </move>
+  </target>
+  <target name="clean" description="clean the solutions">
+    <delete dir="VideoDownloadHelper/bin" />
+    <delete dir="VideoDownloadHelper.Doudan/bin"/>
+    <delete dir="VideoDownloadHelper.TudouAlbum/bin"/>
+    <delete dir="VideoDownloadHelper.TudouUserHome/bin"/>
+    <delete dir="VideoDownloadHelper.YoukuAlbum/bin"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome/bin"/>
+	<delete dir="VideoDownloadHelper.YoukuUserHome2/bin"/>
+	<delete dir="VideoDownloadHelper/obj" />
+	<delete dir="VideoDownloadHelper.Doudan/obj"/>
+    <delete dir="VideoDownloadHelper.TudouAlbum/obj"/>
+    <delete dir="VideoDownloadHelper.TudouUserHome/obj"/>
+    <delete dir="VideoDownloadHelper.YoukuAlbum/obj"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome/obj"/>
+	<delete dir="VideoDownloadHelper.YoukuUserHome2/obj"/>
+	<delete dir="${outputDir}"/>
+  </target>
+</project>

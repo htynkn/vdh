@@ -23,5 +23,6 @@ Thunbs.db
 *.lib
 *.sbr
 obj/
+output/
 [Rr]elease*/
 _ReSharper*/
