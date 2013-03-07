@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.Doudan
     {
         public int GetVersionNumber()
         {
-            return 3;
+            return 4;
         }
 
         public string GetVersion()
         {
-            return "V1.2";
+            return "V1.3";
         }
 
         public bool isVaild(string url)
@@ -36,6 +36,11 @@ namespace VideoDownloadHelper.Doudan
                 return true;
             }
             else if (url.StartsWith("http://www.tudou.com/playlist/id") && url.EndsWith(".html"))
+            {
+                this.Url = url;
+                return true;
+            }
+            else if (url.StartsWith("http://www.tudou.com/plcover/"))
             {
                 this.Url = url;
                 return true;
