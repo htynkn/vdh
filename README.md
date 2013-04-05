@@ -4,7 +4,7 @@
 
 ##运行环境##
 
-软件需要Net Framework支持，如果无法运行请尝试安装：
+软件需要Net Framework 3.5及以上版本支持，如果无法运行请尝试安装：
 http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 ##下载地址##
@@ -40,4 +40,4 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 
 ##其他##
-+ [https://www.ohloh.net/p/vdh](https://www.ohloh.net/p/vdh "Ohole地址")
+![ohloh infomation](http://www.ohloh.net/p/vdh/widgets/project_partner_badge.gif)
