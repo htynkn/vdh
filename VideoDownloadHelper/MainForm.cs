@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -22,7 +21,7 @@ namespace VideoDownloadHelper
         {
             InitializeComponent();
 
-            String path = Application.StartupPath + "\\plugsins";
+            String path = Application.StartupPath + "\\plugins";
 
             AddinManager.Initialize(path, path);
             AddinManager.Registry.Update();
@@ -303,7 +302,7 @@ namespace VideoDownloadHelper
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            String[] names = { "NSoup.dll", "Licence.txt" };
+            String[] names = { "Licence.txt" };
             String notice = ProgramHelper.CheckFiles(names);
             if (notice.Length > 0)
             {

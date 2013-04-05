@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<project name="vdhelper" default="build" basedir=".">
+  <property name="outputDir" value="output/" />
+  <property name="version" value="V1.7"/>
+  <property name="testDir" value="VideoDownloadHelper.Test/bin/Release/"/>
+  <property name="mainDir" value="VideoDownloadHelper/bin/Release/"/>
+  <target name="build" description="build" depends="clean" >
+    <exec program="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\devenv">
+      <arg line="/Rebuild release"/>
+      <arg line="VideoDownloadHelper.sln"/>
+    </exec>
+    <delete>
+      <fileset basedir="${testDir}">
+        <include name="VideoDownloadHelper.Test.dll"/>
+      </fileset>
+    </delete>
+    <mkdir dir="${outputDir}/plugins"/>
+    <move todir="${outputDir}/plugins">
+      <fileset basedir="VideoDownloadHelper.Test/bin/Release">
+        <include name="VideoDownloadHelper.*.dll" />
+      </fileset>
+    </move>
+    <mkdir dir="${outputDir}/libs"/>
+	<delete>
+      <fileset basedir="${mainDir}">
+        <include name="*.pdb" />
+		<include name="*.xml"/>
+      </fileset>
+    </delete>
+    <move todir="${outputDir}/libs">
+      <fileset basedir="${mainDir}">
+        <include name="*.dll" />
+      </fileset>
+    </move>
+	    <move todir="${outputDir}">
+      <fileset basedir="${mainDir}">
+        <include name="*" />
+      </fileset>
+    </move>
+  </target>
+  <target name="clean" description="clean the solutions">
+    <delete>
+      <fileset basedir=".">
+        <include name="*.zip" />
+      </fileset>
+    </delete>
+    <delete dir="VideoDownloadHelper/bin" />
+    <delete dir="VideoDownloadHelper.Doudan/bin"/>
+    <delete dir="VideoDownloadHelper.TudouAlbum/bin"/>
+    <delete dir="VideoDownloadHelper.TudouUserHome/bin"/>
+    <delete dir="VideoDownloadHelper.YoukuAlbum/bin"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome/bin"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome2/bin"/>
+    <delete dir="VideoDownloadHelper/obj" />
+    <delete dir="VideoDownloadHelper.Doudan/obj"/>
+    <delete dir="VideoDownloadHelper.TudouAlbum/obj"/>
+    <delete dir="VideoDownloadHelper.TudouUserHome/obj"/>
+    <delete dir="VideoDownloadHelper.YoukuAlbum/obj"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome/obj"/>
+    <delete dir="VideoDownloadHelper.YoukuUserHome2/obj"/>
+    <delete dir="${outputDir}"/>
+  </target>
+  <target name="dist" depends="build">
+    <zip zipfile="${version}.zip">
+      <fileset basedir="${outputDir}">
+        <include name="**" />
+      </fileset>
+    </zip>
+    <delete dir="${outputDir}"/>
+  </target>
+</project>
