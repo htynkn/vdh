@@ -17,7 +17,7 @@ namespace VideoDownloadHelper.Test.Plugin
             this.urls = new String[] { "http://www.tudou.com/playlist/id9009493.html", "http://www.tudou.com/playlist/id15444955.html", "http://www.tudou.com/playlist/id2151855.html" };
             this.table = new Boolean[] { true, true, true };
             this.count = new int[] { 24, 13, 76 };
-            this.down = new String[] { "tudou://57410380/", "tudou://66971981/", "tudou://11755195/" };
+            this.down = new String[] { "tudou://57410380:st=2/", "tudou://66971981:st=2/", "tudou://11755195:st=2/" };
         }
 
         [Test]

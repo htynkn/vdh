@@ -84,7 +84,7 @@ namespace VideoDownloadHelper.Doudan
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
             String iid = WordHelper.CutWordByKeyword(target, "iid:", ",").Trim();
-            return "tudou://" + iid + "/";
+            return "tudou://" + iid + ":st=2/";
         }
 
         public List<BaseItem> Items
