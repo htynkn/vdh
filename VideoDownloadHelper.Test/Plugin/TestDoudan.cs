@@ -23,13 +23,13 @@ namespace VideoDownloadHelper.Test.Plugin
         [Test]
         public void TestGetVersionNumber()
         {
-            base.TestGetVersionNumber(3);
+            base.TestGetVersionNumber(4);
         }
 
         [Test]
         public void TestGetVersion()
         {
-            base.TestGetVersion("V1.2");
+            base.TestGetVersion("V1.3");
         }
 
         [Test]
