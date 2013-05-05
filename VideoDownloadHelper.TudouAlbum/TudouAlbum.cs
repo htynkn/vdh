@@ -20,12 +20,12 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public int GetVersionNumber()
         {
-            return 3;
+            return 4;
         }
 
         public string GetVersion()
         {
-            return "V2.0";
+            return "V2.1";
         }
 
         public bool isVaild(string url)
@@ -112,7 +112,7 @@ namespace VideoDownloadHelper.TudouAlbum
             {
                 if (code.Equals(item.icode))
                 {
-                    return "tudou://" + item.iid + "/";
+                    return "tudou://" + item.iid + ":st=2/";
                 }
             }
             return String.Empty;
