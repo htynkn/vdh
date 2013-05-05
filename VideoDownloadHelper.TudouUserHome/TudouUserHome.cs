@@ -18,12 +18,12 @@ namespace VideoDownloadHelper.TudouUserHome
 
         public int GetVersionNumber()
         {
-            return 1;
+            return 2;
         }
 
         public string GetVersion()
         {
-            return "V1.0";
+            return "V1.1";
         }
 
         public bool isVaild(string url)
@@ -79,7 +79,7 @@ namespace VideoDownloadHelper.TudouUserHome
             Element script = doc.Select("body>script").First();
             String target = script.OuterHtml();
             String iid = WordHelper.CutWordByKeyword(target, "iid: ", ",").Trim();
-            return "tudou://" + iid + "/";
+            return "tudou://" + iid + ":st=2/";
         }
 
         public List<BaseItem> Items
