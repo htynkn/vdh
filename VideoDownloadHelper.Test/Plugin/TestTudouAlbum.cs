@@ -14,9 +14,9 @@ namespace VideoDownloadHelper.Test.Plugin
         public override void TestFixtureSetUp()
         {
             this.plugin = new VideoDownloadHelper.TudouAlbum.TudouAlbum();
-            this.urls = new String[] { "http://www.tudou.com/albumcover/fmxHfffw_Tc.html" };
+            this.urls = new String[] { "http://www.tudou.com/albumcover/R8LfDvjvHXE.html" };
             this.table = new Boolean[] { true };
-            this.count = new int[] { 16};
+            this.count = new int[] { 366};
             this.down = new String[] { "tudou://150556869/"};
         }
 

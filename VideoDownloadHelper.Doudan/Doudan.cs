@@ -10,6 +10,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using RestSharp;
 using VideoDownloadHelper.Toudan;
+using Newtonsoft.Json;
 
 
 [assembly: Addin]
@@ -61,27 +62,30 @@ namespace VideoDownloadHelper.Doudan
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Url, "gbk");
             Document doc = NSoupClient.Parse(temp);
 
-            Regex r1=new Regex(@"var lid = '\d+';");
-            Match m1=r1.Match(doc.Html());
+            Regex r1 = new Regex(@"var lid = '\d+';");
+            Match m1 = r1.Match(doc.Html());
             Regex r2 = new Regex(@"\d+");
             String lid = r2.Match(m1.ToString()).ToString();
-            String baseUrl = "http://www.tudou.com/plcover/coverPage/getIndexItems.html?lid={id}&page=1&pageSize=500";
+            String baseUrl = "plcover/coverPage/getIndexItems.html?lid={id}&page=1&pageSize=500";
 
             var request = new RestRequest(baseUrl, RestSharp.Method.GET);
-            request.AddUrlSegment("id",lid);
-            RestClient rc = new RestClient();
-            IRestResponse<Message> message= rc.Execute<Message>(request);
+            request.AddUrlSegment("id", lid);
+            RestClient rc = new RestClient("http://www.tudou.com/");
+            DataItem dataItems = JsonConvert.DeserializeObject<DataItem>(rc.Execute(request).Content);
+
+            List<DoudanItem> items = dataItems.message.items;
+            foreach (DoudanItem d in items)
+            {
+                //这里的Url实际上是lid
+                this.Items.Add(new BaseItem() { Name = d.title, Owner = d.ownerNickname, Time = d.time, Url = d.itemId });
+            }
 
             return this.Items;
         }
 
         public String Down(int index)
         {
-            String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(items[index].Url, "gbk");
-            Document doc = NSoupClient.Parse(temp);
-            Element script = doc.Select("body>script").First();
-            String target = script.OuterHtml();
-            String iid = WordHelper.CutWordByKeyword(target, "iid:", ",").Trim();
+            String iid = this.Items[index].Url;
             return "tudou://" + iid + ":st=2/";
         }
 
