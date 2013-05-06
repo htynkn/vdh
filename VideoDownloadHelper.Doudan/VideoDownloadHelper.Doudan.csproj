@@ -41,6 +41,9 @@
       <HintPath>..\packages\Nsoup\NSoup.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.1\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Doudan.cs" />
+    <Compile Include="DoudanItem.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
