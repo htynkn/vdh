@@ -260,7 +260,7 @@ namespace VideoDownloadHelper
                             {
                                 System.Diagnostics.Process.Start(targetUrl);
                             }
-                            Thread.Sleep(1000);
+                            Thread.Sleep(5000);
                         }
                         catch (Win32Exception)
                         {
