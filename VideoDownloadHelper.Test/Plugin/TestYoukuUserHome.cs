@@ -12,17 +12,18 @@ namespace VideoDownloadHelper.Test.Plugin
     {
         IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
         String testUrl = "http://i.youku.com/u/UNjQxMDM2ODg=/videos";
+        String downloadUrl = "iku://|video|http://v.youku.com/v_show/id_XMzc0NzkwNzYw.html|quality=flv|";
 
         [Test]
         public void TestGetVersionNumber()
         {
-            Assert.AreEqual(2, plugin.GetVersionNumber());
+            Assert.AreEqual(4, plugin.GetVersionNumber());
         }
 
         [Test]
         public void TestGetVersion()
         {
-            Assert.AreEqual("V1.1", plugin.GetVersion());
+            Assert.AreEqual("V2.0", plugin.GetVersion());
         }
 
         [Test]
@@ -35,7 +36,7 @@ namespace VideoDownloadHelper.Test.Plugin
         public void TestGetList()
         {
             plugin.isVaild(testUrl);
-            Assert.AreEqual(30, plugin.GetList().Count);
+            Assert.AreEqual(20, plugin.GetList().Count);
         }
 
         [Test]
@@ -43,7 +44,7 @@ namespace VideoDownloadHelper.Test.Plugin
         {
             plugin.isVaild(testUrl);
             plugin.GetList();
-            plugin.Down(0);
+            Assert.AreEqual(downloadUrl, plugin.Down(0));
         }
     }
 }

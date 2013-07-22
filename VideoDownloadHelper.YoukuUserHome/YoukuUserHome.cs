@@ -50,11 +50,10 @@ namespace VideoDownloadHelper.YoukuUserHome
 
             String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Url, "utf-8");
             Document doc = NSoupClient.Parse(temp);
-            Element et = doc.Select("div[class=vList]").First;
-            Elements list = et.Select("ul[class=video]");
+            Elements list = doc.Select("div.items>ul");
             foreach (Element item in list)
             {
-                Element e1 = item.Select("li")[2].Select("a").First();
+                Element e1 = item.Select("li.v_title").Select("a").First();
                 String url = e1.Attr("href");
                 String title = e1.Attr("title");
 
