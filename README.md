@@ -21,7 +21,7 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 * 土豆用户主页：http://www.tudou.com/home/item_u63950822s0p1.html
 * 土豆官方：http://www.tudou.com/albumcover/cghDyIIHl0M.html
 * 优酷专辑：http://www.youku.com/playlist_show/id_3884610.html
-* 优酷用户主页：http://u.youku.com/user_video/id_UNjQxMDM2ODg=.html
+* 优酷用户主页：http://i.youku.com/u/UNjQxMDM2ODg=/videos
 
 ##目录说明##
 * VideoDownloadHelper.exe 主程序
