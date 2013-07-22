@@ -8,6 +8,7 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
+    [Ignore("Unsupported")]
     public class TestYoukuUserHome : ITest
     {
         IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
