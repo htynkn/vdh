@@ -8,7 +8,7 @@ using NSoup.Select;
 using Mono.Addins;
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.8")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.9")]
 
 namespace VideoDownloadHelper.TudouUserHome
 {

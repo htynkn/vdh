@@ -11,7 +11,7 @@ using System.IO;
 using System.Reflection;
 using Mono.Addins;
 
-[assembly: AddinRoot("VideoDownloadHelper", "1.8", Url = "http://vdhelper.sinaapp.com")]
+[assembly: AddinRoot("VideoDownloadHelper", "1.9", Url = "http://vdhelper.sinaapp.com")]
 
 namespace VideoDownloadHelper
 {

@@ -9,7 +9,7 @@ using VideoDownloadHelper.YoukuUserHome;
 using Mono.Addins;
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.8")]
+[assembly: AddinDependency("VideoDownloadHelper", "1.9")]
 
 namespace VideoDownloadHelper.YoukuUserHome
 {
@@ -18,12 +18,12 @@ namespace VideoDownloadHelper.YoukuUserHome
     {
         public int GetVersionNumber()
         {
-            return 2;
+            return 4;
         }
 
         public string GetVersion()
         {
-            return "V1.1";
+            return "V2.0";
         }
 
         public bool isVaild(string url)
