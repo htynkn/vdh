@@ -8,6 +8,7 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
+    [Ignore("Unsupported")]
     public class TestTudouAlbum : BaseTest
     {
         [TestFixtureSetUp]

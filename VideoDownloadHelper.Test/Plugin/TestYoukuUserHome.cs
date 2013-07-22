@@ -11,7 +11,7 @@ namespace VideoDownloadHelper.Test.Plugin
     public class TestYoukuUserHome : ITest
     {
         IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
-        String testUrl = "http://u.youku.com/user_video/id_UNjQxMDM2ODg=.html";
+        String testUrl = "http://i.youku.com/u/UNjQxMDM2ODg=/videos";
 
         [Test]
         public void TestGetVersionNumber()

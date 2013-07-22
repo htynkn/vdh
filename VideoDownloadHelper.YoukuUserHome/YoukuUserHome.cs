@@ -33,6 +33,11 @@ namespace VideoDownloadHelper.YoukuUserHome
                 this.Url = url;
                 return true;
             }
+            else if(url.StartsWith("http://i.youku.com/u/")&&url.EndsWith("/videos"))
+            {
+                this.Url=url;
+                return true;
+            }
             else
             {
                 return false;
