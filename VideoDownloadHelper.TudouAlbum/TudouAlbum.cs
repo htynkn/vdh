@@ -9,6 +9,7 @@ using Mono.Addins;
 using System.Data;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using RestSharp;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]
@@ -49,7 +50,21 @@ namespace VideoDownloadHelper.TudouAlbum
         {
             this.Items = new List<BaseItem>();
 
-            String jsonUrl = "http://www.tudou.com/tvp/alist.action?jsoncallback=__TVP_alist&a={0}";
+            String pageUrl = String.Format("http://www.tudou.com/albumplay/{0}", this.key);
+            String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(pageUrl, "gbk");
+            Document doc = NSoupClient.Parse(temp);
+            String script = doc.Select("body>script").First.Html();
+            Match aidMatch=Regex.Match(script,@",aid=(\d*)");
+            String aid=aidMatch.Groups[1].Value;
+
+            RestClient rc = new RestClient();
+            var request=new RestRequest("http://www.tudou.com/tvp/alist.action?a={aid}");
+            request.AddUrlSegment("aid", aid);
+            ItemList dataItems = JsonConvert.DeserializeObject<ItemList>(rc.Execute(request).Content);
+            foreach (Item item in dataItems.items)
+            {
+                this.items.Add(new BaseItem() { Time = item.time, Name = item.kw, Url = item.iid, Owner = "官方" });
+            }
 
             return this.Items;
         }
@@ -58,7 +73,7 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public String Down(int index)
         {
-            return String.Empty;
+            return "tudou://" + this.items[index].Url + ":st=2/";
         }
 
         public List<BaseItem> Items
@@ -107,13 +122,12 @@ namespace VideoDownloadHelper.TudouAlbum
     public class ItemList
     {
         public List<Item> items;
-        public String updatedIid;
     }
 
     public class Item
     {
         public String iid;
-        public String acode;
-        public String icode;
+        public String kw;
+        public String time;
     }
 }

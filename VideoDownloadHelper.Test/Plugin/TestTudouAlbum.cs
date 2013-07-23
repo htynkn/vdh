@@ -8,7 +8,6 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
-    [Ignore("Working")]
     public class TestTudouAlbum : BaseTest
     {
         [TestFixtureSetUp]
@@ -18,7 +17,7 @@ namespace VideoDownloadHelper.Test.Plugin
             this.urls = new String[] { "http://www.tudou.com/albumcover/R8LfDvjvHXE.html" };
             this.table = new Boolean[] { true };
             this.count = new int[] { 366};
-            this.down = new String[] { "tudou://150556869/"};
+            this.down = new String[] { "tudou://130613503:st=2/" };
         }
 
         [Test]
