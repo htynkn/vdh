@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
-    [Ignore("Unsupported")]
+    [Ignore("Working")]
     public class TestTudouAlbum : BaseTest
     {
         [TestFixtureSetUp]
@@ -24,13 +24,13 @@ namespace VideoDownloadHelper.Test.Plugin
         [Test]
         public void TestGetVersionNumber()
         {
-            base.TestGetVersionNumber(4);
+            base.TestGetVersionNumber(5);
         }
 
         [Test]
         public void TestGetVersion()
         {
-            base.TestGetVersion("V2.1");
+            base.TestGetVersion("V3.0");
         }
 
         [Test]

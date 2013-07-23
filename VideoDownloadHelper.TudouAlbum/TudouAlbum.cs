@@ -8,6 +8,7 @@ using NSoup;
 using Mono.Addins;
 using System.Data;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]
@@ -20,18 +21,21 @@ namespace VideoDownloadHelper.TudouAlbum
 
         public int GetVersionNumber()
         {
-            return 4;
+            return 5;
         }
 
         public string GetVersion()
         {
-            return "V2.1";
+            return "V3.0";
         }
 
         public bool isVaild(string url)
         {
-            if (url.StartsWith("http://www.tudou.com/albumcover/") && url.EndsWith(".html"))
+            Regex regex = new Regex(@"(http://www.tudou.com/albumcover/)([^s]*)(.html)");
+            Match m = regex.Match(url);
+            if (m.Success&&m.Groups.Count==4)
             {
+                this.key = m.Groups[2].Value;
                 this.Url = url;
                 return true;
             }
@@ -44,77 +48,16 @@ namespace VideoDownloadHelper.TudouAlbum
         public List<BaseItem> GetList()
         {
             this.Items = new List<BaseItem>();
-            lists = null;
 
-            String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Url, "gbk");
-            if (String.IsNullOrEmpty(temp))
-            {
-                temp = WebHelper.GetHtmlCodeByWebClient(this.Url, "gbk");
-            }
-            Document doc = NSoupClient.Parse(temp);
-
-            Elements list = new Elements();
-            Elements ets = doc.Select("div.playitems");
-
-            foreach (Element et in ets)
-            {
-                if (et.Select("textarea.lazyContent").Count > 0)
-                {
-                    throw new Exception("暂时不支持这种网址");
-                }
-
-                Elements tempList = et.Select("div.pack_video_card>div.txt a");
-                list.AddRange(tempList);
-            }
-
-            Element scripts = doc.Select("script")[2];
-            this.Aid = WordHelper.CutWordByKeyword(scripts.Html(), "aid: \'", "\',");
-
-            foreach (Element item in list)
-            {
-                String url = item.Attr("href");
-                String title = item.Attr("title");
-                BaseItem b = new BaseItem() { Name = title, Url = url, Time = "未知", Owner = "官方" };
-
-                this.Items.Add(b);
-            }
+            String jsonUrl = "http://www.tudou.com/tvp/alist.action?jsoncallback=__TVP_alist&a={0}";
 
             return this.Items;
         }
 
-        ItemList lists;
+        private String key;
 
         public String Down(int index)
         {
-            if (lists == null)
-            {
-                String targetUrl = String.Format("http://www.tudou.com/tva/srv/alist.action?app=4&a={0}", this.Aid);
-                String temp = WebHelper.GetHtmlCodeByWebClient(targetUrl, "UTF-8");
-                lists = JsonConvert.DeserializeObject<ItemList>(temp);
-            }
-
-            String code = String.Empty;
-            if (index == 0)
-            {
-                code = lists.items[0].icode;
-            }
-            else
-            {
-                String url = this.Items[index].Url;
-                String[] tempCode = url.Split('/');
-                code = tempCode[tempCode.Length - 1];
-                if (code.Contains("html"))
-                {
-                    code = code.Split('.')[0];
-                }
-            }
-            foreach (Item item in lists.items)
-            {
-                if (code.Equals(item.icode))
-                {
-                    return "tudou://" + item.iid + ":st=2/";
-                }
-            }
             return String.Empty;
         }
 
