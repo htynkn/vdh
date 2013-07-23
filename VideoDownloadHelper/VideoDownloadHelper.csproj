@@ -103,6 +103,9 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Trackerbird.Tracker">
+      <HintPath>..\packages\TrackerbirdSDK\Trackerbird.Tracker.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseItem.cs" />

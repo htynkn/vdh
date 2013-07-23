@@ -10,6 +10,7 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 using Mono.Addins;
+using Trackerbird.Tracker;
 
 [assembly: AddinRoot("VideoDownloadHelper", "1.9", Url = "http://vdhelper.sinaapp.com")]
 
@@ -25,6 +26,9 @@ namespace VideoDownloadHelper
 
             AddinManager.Initialize(path, path);
             AddinManager.Registry.Update();
+
+            TBConfig config = new TBConfig("http://90570.tbnet1.com", "2379138861", "1.9", "12", false);
+            App.Start(config);
         }
 
         private void ChangeState(Boolean boolean)
@@ -371,8 +375,11 @@ namespace VideoDownloadHelper
         private void UpdatePlugins_Click(object sender, EventArgs e)
         {
             MessageBox.Show("即将提供...请期待");
-            //Form pluginUpdateForm = new UpdatePluginForm();
-            //pluginUpdateForm.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            App.Stop();
         }
     }
 }
