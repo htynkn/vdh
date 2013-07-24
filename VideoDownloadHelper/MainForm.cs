@@ -95,7 +95,7 @@ namespace VideoDownloadHelper
             {
                 if (DialogResult.OK == MessageBox.Show("你输入的地址错误，请检查后重新输入\r\n如果不清楚要输入何种类型的网址，请点击确认访问http://vdhelper.sinaapp.com/support.html", "出错了", MessageBoxButtons.OKCancel))
                 {
-                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com/support.html?1.6");
+                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com/support.html?"+versionString);
                 }
                 TargetUrl.Text = string.Empty;
                 TargetUrl.Focus();
@@ -264,17 +264,12 @@ namespace VideoDownloadHelper
                         }
                         catch (Win32Exception)
                         {
-                            String keyWord = "";
-                            String forwardUrl = "";
+                            String keyWord = "优酷";
+                            String forwardUrl = "http://mobile.youku.com/index/pc";
                             if (TargetUrl.Text.ToLower().Contains("tudou.com"))
                             {
                                 keyWord = "土豆";
                                 forwardUrl = "http://www.tudou.com/soft/itudou.html";
-                            }
-                            else
-                            {
-                                keyWord = "优酷";
-                                forwardUrl = "http://mobile.youku.com/index/pc";
                             }
                             needDown = true;
                             if (MessageBox.Show("你没有安装" + keyWord + "下载工具，点击确认安装。\n如果你确认你已经安装，请重启后再试。", "错误", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
@@ -300,6 +295,8 @@ namespace VideoDownloadHelper
         }
         #endregion
 
+        String versionString = String.Empty;
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             String[] names = { "Licence.txt" };
@@ -313,8 +310,9 @@ namespace VideoDownloadHelper
                 this.Close();
             }
             Version ApplicationVersion = new Version(Application.ProductVersion);
-            currentVersion.Text = "当前版本：V" + ApplicationVersion.Major + "." + ApplicationVersion.Minor;
-            this.Text = this.Text + " V" + ApplicationVersion.Major + "." + ApplicationVersion.Minor;
+            versionString=ApplicationVersion.Major + "." + ApplicationVersion.Minor;
+            currentVersion.Text = "当前版本：V" + versionString;
+            this.Text = this.Text + " V" + versionString;
             if (!Properties.Settings.Default.isAgree)
             {
                 if (new ReadLicence().ShowDialog() == DialogResult.OK)
