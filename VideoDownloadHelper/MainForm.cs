@@ -269,12 +269,12 @@ namespace VideoDownloadHelper
                             if (TargetUrl.Text.ToLower().Contains("tudou.com"))
                             {
                                 keyWord = "土豆";
-                                forwardUrl = "http://www.tudou.com/my/soft/itudou.php";
+                                forwardUrl = "http://www.tudou.com/soft/itudou.html";
                             }
                             else
                             {
                                 keyWord = "优酷";
-                                forwardUrl = "http://c.youku.com/pc-client";
+                                forwardUrl = "http://mobile.youku.com/index/pc";
                             }
                             needDown = true;
                             if (MessageBox.Show("你没有安装" + keyWord + "下载工具，点击确认安装。\n如果你确认你已经安装，请重启后再试。", "错误", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
@@ -371,8 +371,6 @@ namespace VideoDownloadHelper
         private void UpdatePlugins_Click(object sender, EventArgs e)
         {
             MessageBox.Show("即将提供...请期待");
-            //Form pluginUpdateForm = new UpdatePluginForm();
-            //pluginUpdateForm.ShowDialog();
         }
     }
 }
