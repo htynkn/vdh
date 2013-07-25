@@ -26,3 +26,4 @@ obj/
 output/
 [Rr]elease*/
 _ReSharper*/
+*.zip
