@@ -50,14 +50,12 @@
     <delete dir="VideoDownloadHelper.TudouUserHome/bin"/>
     <delete dir="VideoDownloadHelper.YoukuAlbum/bin"/>
     <delete dir="VideoDownloadHelper.YoukuUserHome/bin"/>
-    <delete dir="VideoDownloadHelper.YoukuUserHome2/bin"/>
     <delete dir="VideoDownloadHelper/obj" />
     <delete dir="VideoDownloadHelper.Doudan/obj"/>
     <delete dir="VideoDownloadHelper.TudouAlbum/obj"/>
     <delete dir="VideoDownloadHelper.TudouUserHome/obj"/>
     <delete dir="VideoDownloadHelper.YoukuAlbum/obj"/>
     <delete dir="VideoDownloadHelper.YoukuUserHome/obj"/>
-    <delete dir="VideoDownloadHelper.YoukuUserHome2/obj"/>
     <delete dir="${outputDir}"/>
   </target>
   <target name="dist" depends="build">
