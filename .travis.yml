@@ -1,0 +1,16 @@
+language: daux.io
+
+script:
+  - cd ..
+  - git clone https://github.com/htynkn/daux.io.git
+  - cd daux.io
+  - rm -rf docs
+  - mkdir docs
+  - mv ../vdh/* docs/
+  - ls
+notifications:
+  email:
+    recipients:
+      - htynkn@163.com
+    on_success: never # [always|never|change] # default: change
+    on_failure: never # [always|never|change] # default: always
