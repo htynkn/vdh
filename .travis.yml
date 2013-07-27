@@ -12,7 +12,8 @@ script:
 - mv -f daux.io/* vdhelper/2/*
 - cd vdhelper/2/
 - svn add * --force
-- svn commit -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID" --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
+- svn commit -m "Committed by Travis-CI" --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
+- ipconfig
 notifications:
   email:
     recipients:
