@@ -5,9 +5,8 @@ script:
   - git clone https://github.com/htynkn/daux.io.git
   - cd daux.io
   - rm -rf docs
-  - mkdir docs
-  - mv ../vdh/* docs/
-  - ls
+  - mv ../vdh/* ../daux.io/
+  - tree
 notifications:
   email:
     recipients:
