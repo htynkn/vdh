@@ -4,4 +4,4 @@ install:
   - sudo apt-get install mono-devel mono-gmcs nunit-console
 script:
   - xbuild VideoDownloadHelper.sln
-  - nunit-console VideoDownloadHelper.Test/bin/Release/VideoDownloadHelper.Test.dll
+  - nunit-console VideoDownloadHelper.Test/obj/Debug/VideoDownloadHelper.Test.dll
