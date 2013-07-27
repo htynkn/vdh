@@ -5,16 +5,15 @@ script:
 - cd ..
 - git clone https://github.com/htynkn/daux.io.git
 - cd daux.io
-- rm -rf docs
+- rm -rf docs/
 - mv -f ../vdh/* ../daux.io/
 - cd ..
 - svn checkout https://svn.sinaapp.com/vdhelper --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
-- mv -f daux.io/* vdhelper/2/*
+- mv -f daux.io/* vdhelper/2/
 - cd vdhelper/2/
 - svn add * --force
 - tree
 - svn commit -m "Committed by Travis-CI" --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
-- ifconfig
 notifications:
   email:
     recipients:
