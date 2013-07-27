@@ -12,8 +12,9 @@ script:
 - mv -f daux.io/* vdhelper/2/*
 - cd vdhelper/2/
 - svn add * --force
+- tree
 - svn commit -m "Committed by Travis-CI" --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
-- ipconfig
+- ifconfig
 notifications:
   email:
     recipients:
