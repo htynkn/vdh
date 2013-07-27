@@ -1,22 +1,21 @@
 language: daux.io
-
 install:
 - sudo apt-get install tree
-env:
-  global:
-    secure: ZysvK4AMty3Vbd0frLRN7SX2XePpaHQPobrcdCqVUDcVqE9tWvgQO/dV3HaP/9iPsev6RCZPZC/xja/iU8TMwgGW9ANaRrtADxst/AFblar+uf0Knny0F8bHenMa91Ep4rgzHrjGtWh8GVwbKVxrHUYxn8CUFI3HuVrUVHVdtlA=
-
 script:
 - cd ..
 - git clone https://github.com/htynkn/daux.io.git
 - cd daux.io
 - rm -rf docs
 - mv ../vdh/* ../daux.io/
-- tree
-- echo $SAE_USERNAME
+- cd ..
+- svn checkout https://svn.sinaapp.com/vdhelper --username $SAE_USERNAME --password $SAE_PASSWORD
 notifications:
   email:
     recipients:
     - htynkn@163.com
     on_success: never
     on_failure: never
+env:
+  global:
+    secure: cp2qJ0zLZp374danY8WCxBHgGzMtuElZqTBB/MaNuxuVLml7uICGLLsbCAGDaqpcyaoIYK6tKutiQTCLzbSn9ddJb+bWBrduIZobe8KN4PlXWBb/zSSVdcL2cGsBEL0uqSPMLpSK7GmCwc48f/FxXhbhU622Dc199120tTLiej8=
+    secure: LwQ4CsJHAc7MrLchq2xWENT7WjNesN6FKlYyLMwMfj5p9K2ttKVwphBWVnpJqmka7vauTcIYR6Ue7Iz/tyHxVZYArr1GJr+IISSp8ziv8nHV9rU/ncBGjs3Ymb+XUjiCTUVTEm8CNYgDJB6G1RJE/5inWemb7c/K9E0E4lJLClI=
