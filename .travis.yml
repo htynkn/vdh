@@ -1,15 +1,22 @@
 language: daux.io
 
+install:
+- sudo apt-get install tree
+env:
+  global:
+    secure: ZysvK4AMty3Vbd0frLRN7SX2XePpaHQPobrcdCqVUDcVqE9tWvgQO/dV3HaP/9iPsev6RCZPZC/xja/iU8TMwgGW9ANaRrtADxst/AFblar+uf0Knny0F8bHenMa91Ep4rgzHrjGtWh8GVwbKVxrHUYxn8CUFI3HuVrUVHVdtlA=
+
 script:
-  - cd ..
-  - git clone https://github.com/htynkn/daux.io.git
-  - cd daux.io
-  - rm -rf docs
-  - mv ../vdh/* ../daux.io/
-  - tree
+- cd ..
+- git clone https://github.com/htynkn/daux.io.git
+- cd daux.io
+- rm -rf docs
+- mv ../vdh/* ../daux.io/
+- tree
+- echo $SAE_USERNAME
 notifications:
   email:
     recipients:
-      - htynkn@163.com
-    on_success: never # [always|never|change] # default: change
-    on_failure: never # [always|never|change] # default: always
+    - htynkn@163.com
+    on_success: never
+    on_failure: never
