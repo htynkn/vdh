@@ -8,7 +8,7 @@ script:
 - rm -rf docs
 - mv ../vdh/* ../daux.io/
 - cd ..
-- svn checkout https://svn.sinaapp.com/vdhelper --username htynkn@qq.com --password $SAE_PASSWORD
+- svn checkout https://svn.sinaapp.com/vdhelper --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
 - tree
 notifications:
   email:
