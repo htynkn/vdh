@@ -10,6 +10,7 @@ script:
 - cd ..
 - svn checkout https://svn.sinaapp.com/vdhelper --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
 - mv -f daux.io/* vdhelper/2/*
+- cd vdhelper/2/
 - svn add * --force
 - svn commit -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID" --username htynkn@qq.com --password $SAE_PASSWORD --no-auth-cache
 notifications:
