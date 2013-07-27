@@ -9,5 +9,5 @@ notifications:
   email:
     recipients:
       - htynkn@163.com
-    on_success:never
-    on_failure:always
+    on_success: never # [always|never|change] # default: change
+    on_failure: always # [always|never|change] # default: always
