@@ -8,7 +8,8 @@ script:
 - rm -rf docs
 - mv ../vdh/* ../daux.io/
 - cd ..
-- svn checkout https://svn.sinaapp.com/vdhelper --username $SAE_USERNAME --password $SAE_PASSWORD
+- svn checkout https://svn.sinaapp.com/vdhelper --username htynkn@qq.com --password $SAE_PASSWORD
+- tree
 notifications:
   email:
     recipients:
@@ -17,5 +18,4 @@ notifications:
     on_failure: never
 env:
   global:
-    secure: cp2qJ0zLZp374danY8WCxBHgGzMtuElZqTBB/MaNuxuVLml7uICGLLsbCAGDaqpcyaoIYK6tKutiQTCLzbSn9ddJb+bWBrduIZobe8KN4PlXWBb/zSSVdcL2cGsBEL0uqSPMLpSK7GmCwc48f/FxXhbhU622Dc199120tTLiej8=
-    secure: LwQ4CsJHAc7MrLchq2xWENT7WjNesN6FKlYyLMwMfj5p9K2ttKVwphBWVnpJqmka7vauTcIYR6Ue7Iz/tyHxVZYArr1GJr+IISSp8ziv8nHV9rU/ncBGjs3Ymb+XUjiCTUVTEm8CNYgDJB6G1RJE/5inWemb7c/K9E0E4lJLClI=
+    secure: rcrmojLprNAg/hFABt2siTmM7S8M5Gc/jvVKduOPwHbUoQdFF1d7NrH4G7g3K3M8DLx9HHhy0oSTM7T6c+fqfWIrAt8vgU4s62BHxH9kkjIlmMgG+CqUV67o2sxrLjX3qxxOXdtg+IXiiyUly1POEwTJ9SPW+zX6BhRdLaUb7vI=
