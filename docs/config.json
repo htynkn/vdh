@@ -2,7 +2,8 @@
 	"title": "vdhelper",
 	"tagline": "土豆优酷视频批量下载助手",
 	"theme": "navy",
-	"repo": "htynk/vdh",
+	"author": "Huang YunKun",
+	"repo": "htynkn/vdh",
 	"float":false,
 	"baidu_analytics":"34f5aa3182ea2ee95980fde67f47a44a",
 	"links": {
