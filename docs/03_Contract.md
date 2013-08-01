@@ -5,3 +5,7 @@
 * 微博<a href="http://weibo.com/htynkn">http://weibo.com/htynkn</a>
 * QQ:512395752
 * Email:htynkn@163.com
+
+## 在线反馈
+
+<script src='https://jinshuju.net/f/wXtkhd/embedded.js?banner=show&height=638'></script>
