@@ -197,9 +197,6 @@
     </Content>
     <Content Include="logo.ico" />
     <Content Include="Res\logo.ico" />
-    <Content Include="使用说明.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
