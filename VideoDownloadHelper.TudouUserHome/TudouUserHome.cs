@@ -6,6 +6,7 @@ using NSoup.Nodes;
 using NSoup;
 using NSoup.Select;
 using Mono.Addins;
+using System.Text.RegularExpressions;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]
@@ -18,27 +19,19 @@ namespace VideoDownloadHelper.TudouUserHome
 
         public int GetVersionNumber()
         {
-            return 2;
+            return 3;
         }
 
         public string GetVersion()
         {
-            return "V1.1";
+            return "V1.2";
         }
 
         public bool isVaild(string url)
         {
-            if (url.StartsWith("http://www.tudou.com/home/_"))
-            {
-                if (!url.EndsWith("/"))
-                {
-                    url = url + "/";
-                }
-                String number = WordHelper.CutWordByKeyword(url, "http://www.tudou.com/home/_", "/");
-                url = String.Format("http://www.tudou.com/home/item_u{0}s0p1.html", number);
-            }
-
-            if (url.StartsWith("http://www.tudou.com/home/item_") && url.EndsWith(".html"))
+            Regex regex = new Regex(@"http://www.tudou.com/home/item_u(\d*)s(\d*)p(\d*).html");
+            Match m = regex.Match(url);
+            if (m.Success)
             {
                 this.Url = url;
                 return true;
