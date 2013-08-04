@@ -24,27 +24,19 @@ namespace VideoDownloadHelper.Doudan
     {
         public int GetVersionNumber()
         {
-            return 4;
+            return 5;
         }
 
         public string GetVersion()
         {
-            return "V1.3";
+            return "V1.4";
         }
 
         public bool isVaild(string url)
         {
-            if (url.StartsWith("http://www.tudou.com/playlist/id/"))
-            {
-                this.Url = url;
-                return true;
-            }
-            else if (url.StartsWith("http://www.tudou.com/playlist/id") && url.EndsWith(".html"))
-            {
-                this.Url = url;
-                return true;
-            }
-            else if (url.StartsWith("http://www.tudou.com/plcover/"))
+            Regex regex = new Regex(@"http://www.tudou.com/plcover/[^s]*(/|)");
+            Match m = regex.Match(url);
+            if(m.Success)
             {
                 this.Url = url;
                 return true;
