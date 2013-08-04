@@ -34,7 +34,7 @@ namespace VideoDownloadHelper.TudouAlbum
         {
             Regex regex = new Regex(@"(http://www.tudou.com/albumcover/)([^s]*)(.html)");
             Match m = regex.Match(url);
-            if (m.Success&&m.Groups.Count==4)
+            if (m.Success)
             {
                 this.key = m.Groups[2].Value;
                 this.Url = url;
