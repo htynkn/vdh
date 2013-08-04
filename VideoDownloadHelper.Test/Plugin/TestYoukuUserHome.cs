@@ -8,43 +8,46 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
-    public class TestYoukuUserHome : ITest
+    public class TestYoukuUserHome : BaseTest
     {
-        IPlugin plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
-        String testUrl = "http://i.youku.com/u/UNjQxMDM2ODg=/videos";
-        String downloadUrl = "iku://|video|http://v.youku.com/v_show/id_XMzc0NzkwNzYw.html|quality=flv|";
+        [TestFixtureSetUp]
+        public override void TestFixtureSetUp()
+        {
+            this.plugin = new VideoDownloadHelper.YoukuUserHome.YoukuUserHome();
+            this.urls = new String[] { "http://i.youku.com/u/UNjQxMDM2ODg=/videos", "http://i.youku.com/u/UNDI0ODUyODc2/videos/order_1_view_1_page_2" };
+            this.table = new Boolean[] { true,true };
+            this.count = new int[] { 20,20 };
+            this.down = new String[] { "iku://|video|http://v.youku.com/v_show/id_XMzc0NzkwNzYw.html|quality=flv|", "iku://|video|http://v.youku.com/v_show/id_XNTcxMTAzMDY0.html|quality=flv|" };
+        }
 
         [Test]
         public void TestGetVersionNumber()
         {
-            Assert.AreEqual(4, plugin.GetVersionNumber());
+            base.TestGetVersionNumber(5);
         }
 
         [Test]
         public void TestGetVersion()
         {
-            Assert.AreEqual("V2.0", plugin.GetVersion());
+            base.TestGetVersion("V2.1");
         }
 
         [Test]
-        public void TestisVaild()
+        public override void TestisVaild()
         {
-            Assert.True(plugin.isVaild(testUrl));
+            base.TestisVaild();
         }
 
         [Test]
-        public void TestGetList()
+        public override void TestGetList()
         {
-            plugin.isVaild(testUrl);
-            Assert.AreEqual(20, plugin.GetList().Count);
+            base.TestGetList();
         }
 
         [Test]
-        public void TestDown()
+        public override void TestDown()
         {
-            plugin.isVaild(testUrl);
-            plugin.GetList();
-            Assert.AreEqual(downloadUrl, plugin.Down(0));
+            base.TestDown();
         }
     }
 }

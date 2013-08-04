@@ -7,6 +7,7 @@ using NSoup;
 using NSoup.Select;
 using VideoDownloadHelper.YoukuUserHome;
 using Mono.Addins;
+using System.Text.RegularExpressions;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]
@@ -18,24 +19,21 @@ namespace VideoDownloadHelper.YoukuUserHome
     {
         public int GetVersionNumber()
         {
-            return 4;
+            return 5;
         }
 
         public string GetVersion()
         {
-            return "V2.0";
+            return "V2.1";
         }
 
         public bool isVaild(string url)
         {
-            if (url.StartsWith("http://u.youku.com/user_video/id_") && url.EndsWith(".html"))
+            Regex regex = new Regex(@"http://i.youku.com/u/[^s]*/videos([^s]*|)");
+            Match m = regex.Match(url);
+            if (m.Success)
             {
                 this.Url = url;
-                return true;
-            }
-            else if(url.StartsWith("http://i.youku.com/u/")&&url.EndsWith("/videos"))
-            {
-                this.Url=url;
                 return true;
             }
             else
