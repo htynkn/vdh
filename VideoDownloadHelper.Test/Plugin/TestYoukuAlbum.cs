@@ -7,43 +7,46 @@ using NUnit.Framework;
 namespace VideoDownloadHelper.Test.Plugin
 {
     [TestFixture]
-    public class TestYoukuAlbum : ITest
+    public class TestYoukuAlbum : BaseTest
     {
-        IPlugin plugin = new VideoDownloadHelper.YoukuAlbum.YoukuAlbum();
-        String testUrl="http://www.youku.com/playlist_show/id_2256623.html";
+        [TestFixtureSetUp]
+        public override void TestFixtureSetUp()
+        {
+            this.plugin = new VideoDownloadHelper.YoukuAlbum.YoukuAlbum();
+            this.urls = new String[] { "http://www.youku.com/playlist_show/id_2256623.html" };
+            this.table = new Boolean[] { true };
+            this.count = new int[] { 20 };
+            this.down = new String[] { "iku://|video|http://v.youku.com/v_show/id_XMjQyODk0MA==.html|quality=flv|" };
+        }
 
         [Test]
         public void TestGetVersionNumber()
         {
-            Assert.AreEqual(2, plugin.GetVersionNumber());
+            base.TestGetVersionNumber(3);
         }
 
         [Test]
         public void TestGetVersion()
         {
-            Assert.AreEqual("V2.0", plugin.GetVersion());
+            base.TestGetVersion("V2.1");
         }
 
         [Test]
-        public void TestisVaild()
+        public override void TestisVaild()
         {
-            Assert.True(plugin.isVaild(testUrl));
+            base.TestisVaild();
         }
 
         [Test]
-        public void TestGetList()
+        public override void TestGetList()
         {
-            plugin.isVaild(testUrl);
-            List<BaseItem> list = plugin.GetList();
-            Assert.AreEqual(20, list.Count);
+            base.TestGetList();
         }
 
         [Test]
-        public void TestDown()
+        public override void TestDown()
         {
-            plugin.isVaild(testUrl);
-            plugin.GetList();
-            plugin.Down(0);
+            base.TestDown();
         }
     }
 }
