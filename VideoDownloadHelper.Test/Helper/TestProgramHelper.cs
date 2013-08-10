@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using VideoDownloadHelper.Helper;
 
-namespace VideoDownloadHelper.Test
+namespace VideoDownloadHelper.Test.Helper
 {
     [TestFixture]
     public class TestProgramHelper
