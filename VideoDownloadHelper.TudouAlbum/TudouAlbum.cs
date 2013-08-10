@@ -10,6 +10,7 @@ using System.Data;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using RestSharp;
+using VideoDownloadHelper.Helper;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]

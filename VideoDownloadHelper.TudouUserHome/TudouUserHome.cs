@@ -7,6 +7,7 @@ using NSoup;
 using NSoup.Select;
 using Mono.Addins;
 using System.Text.RegularExpressions;
+using VideoDownloadHelper.Helper;
 
 [assembly: Addin]
 [assembly: AddinDependency("VideoDownloadHelper", "1.9")]
