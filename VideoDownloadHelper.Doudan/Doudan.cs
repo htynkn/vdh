@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using RestSharp;
 using VideoDownloadHelper.Toudan;
 using Newtonsoft.Json;
+using VideoDownloadHelper.Helper;
 
 
 [assembly: Addin]
