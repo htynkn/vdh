@@ -1,5 +1,8 @@
 language: csharp
-
+branches:
+  only:
+    - master
+    - docs
 install:
   - sudo apt-get install mono-devel mono-gmcs nunit-console
 script:
