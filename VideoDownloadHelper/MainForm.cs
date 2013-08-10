@@ -10,6 +10,7 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 using Mono.Addins;
+using VideoDownloadHelper.Helper;
 
 [assembly: AddinRoot("VideoDownloadHelper", "1.9", Url = "http://vdhelper.sinaapp.com")]
 

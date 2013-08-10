@@ -114,7 +114,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramHelper.cs" />
+    <Compile Include="Helper\ProgramHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -171,8 +171,8 @@
     <Compile Include="UpdateWindow.Designer.cs">
       <DependentUpon>UpdateWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="WebHelper.cs" />
-    <Compile Include="WordHelper.cs" />
+    <Compile Include="Helper\WebHelper.cs" />
+    <Compile Include="Helper\WordHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
