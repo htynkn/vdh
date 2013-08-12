@@ -21,9 +21,9 @@ namespace VideoDownloadHelper
         public MainForm()
         {
             InitializeComponent();
+            Askform.init("78e62f00-4fd5-49f0-ab06-7becd28250e7", 2);
 
             String path = Application.StartupPath + "\\plugins";
-
             AddinManager.Initialize(path, path);
             AddinManager.Registry.Update();
         }
@@ -50,7 +50,6 @@ namespace VideoDownloadHelper
 
             bool isVaild = false;
             bool hasPlugin = false;
-
             targetPlugin = null;
 
             foreach (IPlugin plugin in AddinManager.GetExtensionObjects<IPlugin>())
@@ -96,7 +95,8 @@ namespace VideoDownloadHelper
             {
                 if (DialogResult.OK == MessageBox.Show("你输入的地址错误，请检查后重新输入\r\n如果不清楚要输入何种类型的网址，请点击确认访问http://vdhelper.sinaapp.com/support.html", "出错了", MessageBoxButtons.OKCancel))
                 {
-                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com/support.html?"+versionString);
+                    Askform.post("网址错误", input);
+                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com/Support?"+versionString);
                 }
                 TargetUrl.Text = string.Empty;
                 TargetUrl.Focus();
@@ -199,6 +199,7 @@ namespace VideoDownloadHelper
                 }
                 else
                 {
+                    Askform.post("错误发生了", "输入为" + targetPlugin.Url + "\r\n错误类型为：" + ex.Message);
                     getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + "如果反复尝试均有此错误，可以联系QQ：512395752");
                 }
             }
@@ -357,14 +358,15 @@ namespace VideoDownloadHelper
             }
         }
 
+        private readonly String websiteUrl = "http://vdhelper.sinaapp.com";
         private void OfficeSite_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
+            System.Diagnostics.Process.Start(websiteUrl);
         }
 
         private void currentVersion_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
+            System.Diagnostics.Process.Start(websiteUrl);
         }
 
         private void UpdatePlugins_Click(object sender, EventArgs e)
