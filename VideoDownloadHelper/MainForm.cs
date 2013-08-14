@@ -13,11 +13,16 @@ using Mono.Addins;
 using VideoDownloadHelper.Helper;
 
 [assembly: AddinRoot("VideoDownloadHelper", "1.9", Url = "http://vdhelper.sinaapp.com")]
-
 namespace VideoDownloadHelper
 {
     public partial class MainForm : Form
     {
+        private IPlugin targetPlugin;
+        private Boolean update = true;
+        private String versionString = String.Empty;
+        private readonly String websiteUrl = "http://vdhelper.sinaapp.com";
+        private readonly String netFrameworkUrl = "http://down.tech.sina.com.cn/content/40694.html";
+
         public MainForm()
         {
             InitializeComponent();
@@ -35,8 +40,6 @@ namespace VideoDownloadHelper
             MessageLabel.Visible = boolean;
             DownSelectItem.Enabled = !boolean;
         }
-
-        IPlugin targetPlugin;
 
         private void GetVideoList_Click(object sender, EventArgs e)
         {
@@ -130,11 +133,6 @@ namespace VideoDownloadHelper
             this.Close();
         }
 
-        private void MyBlog_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://htynkn.cnblogs.com/?td");
-        }
-
         private void TargetUrl_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.Equals((char)13))
@@ -205,7 +203,7 @@ namespace VideoDownloadHelper
             }
         }
 
-        bool update = true;
+        
 
         private void getlistWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -234,7 +232,7 @@ namespace VideoDownloadHelper
             {
                 if (MessageBox.Show("请检测你的运行环境，程序最低要求net 3.5版本，点击确定前往下载页面", "缺乏运行库文件", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                 {
-                    System.Diagnostics.Process.Start("http://down.tech.sina.com.cn/content/40694.html");
+                    System.Diagnostics.Process.Start(netFrameworkUrl);
                     this.Close();
                 }
             }
@@ -297,8 +295,6 @@ namespace VideoDownloadHelper
         }
         #endregion
 
-        String versionString = String.Empty;
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             String[] names = { "Licence.txt" };
@@ -307,7 +303,7 @@ namespace VideoDownloadHelper
             {
                 if (MessageBox.Show(notice + "\n点击确定跳到下载页面", "缺少必要的文件", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
                 {
-                    System.Diagnostics.Process.Start("http://vdhelper.sinaapp.com");
+                    System.Diagnostics.Process.Start(websiteUrl);
                 }
                 this.Close();
             }
@@ -317,11 +313,7 @@ namespace VideoDownloadHelper
             this.Text = this.Text + " V" + versionString;
             if (!Properties.Settings.Default.isAgree)
             {
-                if (new ReadLicence().ShowDialog() == DialogResult.OK)
-                {
-
-                }
-                else
+                if (new ReadLicence().ShowDialog() != DialogResult.OK)
                 {
                     Close();
                 }
@@ -358,7 +350,6 @@ namespace VideoDownloadHelper
             }
         }
 
-        private readonly String websiteUrl = "http://vdhelper.sinaapp.com";
         private void OfficeSite_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(websiteUrl);
@@ -367,11 +358,6 @@ namespace VideoDownloadHelper
         private void currentVersion_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(websiteUrl);
-        }
-
-        private void UpdatePlugins_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("即将提供...请期待");
         }
     }
 }

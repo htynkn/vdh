@@ -46,7 +46,7 @@ namespace VideoDownloadHelper.Helper
 
             var request = new RestRequest();
             request.Resource = "/program/update.xml";
-            request.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 VdhUpdater/1.6");
+            request.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 VdhUpdater/1.9");
 
             IRestResponse<UpdateModel> response = client.Execute<UpdateModel>(request);
             return response.Data.ToString();

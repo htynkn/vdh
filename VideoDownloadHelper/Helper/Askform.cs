@@ -9,7 +9,6 @@ namespace VideoDownloadHelper.Helper
     public class Askform
     {
         private static Askform instance = null;
-        private String title;
 
         private String fromGuide;
 
