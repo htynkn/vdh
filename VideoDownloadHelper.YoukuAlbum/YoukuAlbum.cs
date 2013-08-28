@@ -15,7 +15,7 @@ using VideoDownloadHelper.Helper;
 
 namespace VideoDownloadHelper.YoukuAlbum
 {
-     [Extension]
+    [Extension]
     public class YoukuAlbum : IPlugin
     {
         public int GetVersionNumber()
@@ -71,11 +71,11 @@ namespace VideoDownloadHelper.YoukuAlbum
 
         public String Down(int index)
         {
-            String temp = WebHelper.GetHtmlCodeByWebClientWithGzip(this.Items[index].Url, "utf-8");
-            Document doc = NSoupClient.Parse(temp);
-            Element et = doc.Select("a#fn_pc_download").First;
-            String down = et.Attr("_href");
-            return down;
+            String baseUrl = "iku://|video|http://v.youku.com/v_show/id_{0}.html|quality=flv|";
+            Regex regex = new Regex(@"http://v.youku.com/v_show/id_([^s]*).htm*");
+            Match match = regex.Match(this.items[index].Url);
+            String id = match.Groups[1].Value;
+            return String.Format(baseUrl, id);
         }
 
         public List<BaseItem> Items
