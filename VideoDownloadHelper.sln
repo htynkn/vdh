@@ -15,11 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.YoukuAl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDownloadHelper.YoukuUserHome", "VideoDownloadHelper.YoukuUserHome\VideoDownloadHelper.YoukuUserHome.csproj", "{DE311F90-6650-4A5B-86EE-21241B6696E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B07CEF16-FDBE-4EE7-93BD-E97E555622DC}"
-	ProjectSection(SolutionItems) = preProject
-		vdh.build.xml = vdh.build.xml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

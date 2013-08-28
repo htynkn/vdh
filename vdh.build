@@ -5,7 +5,7 @@
   <property name="testDir" value="VideoDownloadHelper.Test/bin/Release/"/>
   <property name="mainDir" value="VideoDownloadHelper/bin/Release/"/>
   <target name="build" description="build" depends="clean" >
-    <exec program="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\devenv">
+    <exec program="D:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\devenv">
       <arg line="/Rebuild release"/>
       <arg line="VideoDownloadHelper.sln"/>
     </exec>
