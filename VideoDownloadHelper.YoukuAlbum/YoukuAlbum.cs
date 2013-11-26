@@ -30,7 +30,7 @@ namespace VideoDownloadHelper.YoukuAlbum
 
         public bool isVaild(string url)
         {
-            Regex regex = new Regex(@"http://www.youku.com/playlist_show/id_[^s]*.html");
+            Regex regex = new Regex(@"http://www.youku.com/playlist_show/id_[^S]*.html");
             Match m = regex.Match(url);
             if (m.Success)
             {

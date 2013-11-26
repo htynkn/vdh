@@ -13,10 +13,10 @@ namespace VideoDownloadHelper.Test.Plugin
         public override void TestFixtureSetUp()
         {
             this.plugin = new VideoDownloadHelper.YoukuAlbum.YoukuAlbum();
-            this.urls = new String[] { "http://www.youku.com/playlist_show/id_2256623.html" };
-            this.table = new Boolean[] { true };
-            this.count = new int[] { 20 };
-            this.down = new String[] { "iku://|video|http://v.youku.com/v_show/id_XMjQyODk0MA==.html|quality=flv|" };
+            this.urls = new String[] { "http://www.youku.com/playlist_show/id_2256623.html", "http://www.youku.com/playlist_show/id_3136914_page_2_ascending_1_mode_pic.html" };
+            this.table = new Boolean[] { true,true};
+            this.count = new int[] { 20,20 };
+            this.down = new String[] { "iku://|video|http://v.youku.com/v_show/id_XMjQyODk0MA==.html|quality=flv|", "iku://|video|http://v.youku.com/v_show/id_XMzMyODI4NA==.html|quality=flv|" };
         }
 
         [Test]
