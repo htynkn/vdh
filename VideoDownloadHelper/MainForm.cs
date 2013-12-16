@@ -12,7 +12,7 @@ using System.Reflection;
 using Mono.Addins;
 using VideoDownloadHelper.Helper;
 
-[assembly: AddinRoot("VideoDownloadHelper", "1.9", Url = "http://vdhelper.sinaapp.com")]
+[assembly: AddinRoot("VideoDownloadHelper", "2.0", Url = "http://vdhelper.sinaapp.com")]
 namespace VideoDownloadHelper
 {
     public partial class MainForm : Form
@@ -170,7 +170,7 @@ namespace VideoDownloadHelper
         }
 
         #region 获取视频列表
-
+        private String helperMessage="由于本软件已经停止更新，如果反复尝试仍然失败，请尝试使用其他软件，比如【硕鼠】。";
         private void getlistWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             try
@@ -183,7 +183,7 @@ namespace VideoDownloadHelper
             }
             catch (WebException)
             {
-                getlistWorker.ReportProgress(100, "网络暂时不可用，可能是服务器忙，请稍后再试。\n如确实仍有问题，请联系QQ：512395752");
+                getlistWorker.ReportProgress(100, "网络暂时不可用，可能是服务器忙，请稍后再试。\n" + helperMessage);
             }
             catch (FileNotFoundException)
             {
@@ -198,7 +198,7 @@ namespace VideoDownloadHelper
                 else
                 {
                     Askform.post("错误发生了", "输入为" + targetPlugin.Url + "\r\n错误类型为：" + ex.Message);
-                    getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + "如果反复尝试均有此错误，可以联系QQ：512395752");
+                    getlistWorker.ReportProgress(100, ex.GetType() + " " + ex.Message + "\r\n" + helperMessage);
                 }
             }
         }

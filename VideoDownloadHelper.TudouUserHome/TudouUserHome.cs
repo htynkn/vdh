@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using VideoDownloadHelper.Helper;
 
 [assembly: Addin]
-[assembly: AddinDependency("VideoDownloadHelper", "1.9")]
+[assembly: AddinDependency("VideoDownloadHelper", "2.0")]
 
 namespace VideoDownloadHelper.TudouUserHome
 {

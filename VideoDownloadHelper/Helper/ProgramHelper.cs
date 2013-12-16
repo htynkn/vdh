@@ -10,7 +10,7 @@ namespace VideoDownloadHelper.Helper
 {
     public class ProgramHelper
     {
-        public static int number = 12; //1.9版本
+        public static int number = 15; //2.0版本
 
         public static String CheckFiles(String[] names)
         {
