@@ -53,3 +53,7 @@ http://dl.pconline.com.cn/html_2/1/82/id=38126&pn=0.html
 
 ##其他##
 ![ohloh infomation](http://www.ohloh.net/p/vdh/widgets/project_partner_badge.gif)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/htynkn/vdh/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
